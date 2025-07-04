@@ -20,7 +20,17 @@ type CartContextType = {
   subtotal: number
 }
 
-const CartContext = createContext<CartContextType | undefined>(undefined)
+const defaultContext: CartContextType = {
+  items: [],
+  addItem: () => {},
+  removeItem: () => {},
+  updateQuantity: () => {},
+  clearCart: () => {},
+  itemCount: 0,
+  subtotal: 0,
+}
+
+const CartContext = createContext<CartContextType>(defaultContext)
 
 export function CartProvider({ children }: { children: ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([])
@@ -97,9 +107,5 @@ export function CartProvider({ children }: { children: ReactNode }) {
 }
 
 export function useCart() {
-  const context = useContext(CartContext)
-  if (context === undefined) {
-    throw new Error("useCart must be used within a CartProvider")
-  }
-  return context
+  return useContext(CartContext)
 }
