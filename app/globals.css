@@ -73,9 +73,103 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  /* Improved text rendering */
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  /* Better touch targets for mobile */
+  @media (max-width: 768px) {
+    button,
+    a,
+    input,
+    select,
+    textarea {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  }
 }
 
 @layer utilities {
+  /* Responsive text utilities */
+  .text-responsive-xs {
+    @apply text-xs sm:text-sm;
+  }
+
+  .text-responsive-sm {
+    @apply text-sm sm:text-base;
+  }
+
+  .text-responsive-base {
+    @apply text-base sm:text-lg;
+  }
+
+  .text-responsive-lg {
+    @apply text-lg sm:text-xl;
+  }
+
+  .text-responsive-xl {
+    @apply text-xl sm:text-2xl;
+  }
+
+  .text-responsive-2xl {
+    @apply text-2xl sm:text-3xl;
+  }
+
+  .text-responsive-3xl {
+    @apply text-3xl sm:text-4xl;
+  }
+
+  /* Responsive spacing utilities */
+  .space-responsive-x {
+    @apply space-x-2 sm:space-x-3 lg:space-x-4;
+  }
+
+  .space-responsive-y {
+    @apply space-y-3 sm:space-y-4 lg:space-y-6;
+  }
+
+  .gap-responsive {
+    @apply gap-4 sm:gap-6 lg:gap-8;
+  }
+
+  .p-responsive {
+    @apply p-4 sm:p-6 lg:p-8;
+  }
+
+  .px-responsive {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+
+  .py-responsive {
+    @apply py-8 sm:py-12 lg:py-16;
+  }
+
+  /* Line clamp utilities for better text truncation */
+  .line-clamp-1 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+  }
+
+  .line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  .line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+
   .animate-pulse-subtle {
     animation: pulse-subtle 3s infinite;
   }
@@ -287,5 +381,247 @@
     100% {
       transform: translate(0, 0) scale(1);
     }
+  }
+
+  /* Responsive grid utilities */
+  .grid-responsive-1 {
+    @apply grid-cols-1;
+  }
+
+  .grid-responsive-2 {
+    @apply grid-cols-1 sm:grid-cols-2;
+  }
+
+  .grid-responsive-3 {
+    @apply grid-cols-1 sm:grid-cols-2 lg:grid-cols-3;
+  }
+
+  .grid-responsive-4 {
+    @apply grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
+  }
+
+  /* Safe area utilities for mobile devices */
+  .safe-top {
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .safe-left {
+    padding-left: env(safe-area-inset-left);
+  }
+
+  .safe-right {
+    padding-right: env(safe-area-inset-right);
+  }
+
+  /* Enhanced Ken Burns effects for craftsmanship slider */
+  .animate-ken-burns-zoom-pan-right {
+    animation: kenBurnsZoomPanRight 5s ease-in-out forwards;
+  }
+
+  .animate-ken-burns-zoom-pan-left {
+    animation: kenBurnsZoomPanLeft 5s ease-in-out forwards;
+  }
+
+  .animate-ken-burns-zoom-in {
+    animation: kenBurnsZoomIn 5s ease-in-out forwards;
+  }
+
+  .animate-ken-burns-zoom-out {
+    animation: kenBurnsZoomOut 5s ease-in-out forwards;
+  }
+
+  .animate-ken-burns-pan-diagonal {
+    animation: kenBurnsPanDiagonal 5s ease-in-out forwards;
+  }
+
+  /* Keyframes for enhanced Ken Burns effects */
+  @keyframes kenBurnsZoomPanRight {
+    0% {
+      transform: scale(1) translateX(0);
+    }
+    100% {
+      transform: scale(1.15) translateX(3%);
+    }
+  }
+
+  @keyframes kenBurnsZoomPanLeft {
+    0% {
+      transform: scale(1.15) translateX(3%);
+    }
+    100% {
+      transform: scale(1) translateX(-3%);
+    }
+  }
+
+  @keyframes kenBurnsZoomIn {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.08);
+    }
+    100% {
+      transform: scale(1.15);
+    }
+  }
+
+  @keyframes kenBurnsZoomOut {
+    0% {
+      transform: scale(1.15);
+    }
+    50% {
+      transform: scale(1.08);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes kenBurnsPanDiagonal {
+    0% {
+      transform: scale(1) translate(0, 0);
+    }
+    33% {
+      transform: scale(1.05) translate(1%, 1%);
+    }
+    66% {
+      transform: scale(1.1) translate(2%, 2%);
+    }
+    100% {
+      transform: scale(1.15) translate(3%, 3%);
+    }
+  }
+
+  /* Enhanced focus styles for better accessibility */
+  .focus\:ring-amber-400:focus {
+    --tw-ring-color: rgb(251 191 36);
+  }
+
+  .focus\:ring-offset-black:focus {
+    --tw-ring-offset-color: #000;
+  }
+
+  /* Screen reader only content */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .focus\:not-sr-only:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: inherit;
+    margin: inherit;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+  }
+
+  /* Enhanced focus indicators */
+  button:focus,
+  a:focus,
+  input:focus,
+  select:focus,
+  textarea:focus {
+    outline: 2px solid #f59e0b;
+    outline-offset: 2px;
+  }
+
+  /* Color contrast improvements */
+  .text-amber-400 {
+    color: #fbbf24; /* Improved contrast ratio */
+  }
+
+  .bg-amber-600 {
+    background-color: #d97706; /* Better contrast */
+  }
+
+  /* Skip link styles */
+  .skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: #d97706;
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 4px;
+    z-index: 1000;
+  }
+
+  .skip-link:focus {
+    top: 6px;
+  }
+}
+
+/* Responsive images */
+@layer components {
+  .responsive-image {
+    @apply w-full h-auto object-cover;
+  }
+
+  .responsive-image-contain {
+    @apply w-full h-auto object-contain;
+  }
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .border-gray-800 {
+    @apply border-gray-600;
+  }
+
+  .text-gray-400 {
+    @apply text-gray-300;
+  }
+
+  .bg-gray-900 {
+    @apply bg-gray-800;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .animate-logo-spin,
+  .animate-ken-burns-in,
+  .animate-ken-burns-out,
+  .zoom-in-effect,
+  .zoom-out-effect,
+  .pan-right-effect,
+  .pan-left-effect,
+  .pan-up-effect,
+  .pan-down-effect,
+  .pan-diagonal-effect,
+  .pan-center-effect {
+    animation: none;
+  }
+
+  .transition-all,
+  .transition-colors,
+  .transition-transform {
+    transition: none;
+  }
+
+  .transform {
+    transform: none !important;
   }
 }

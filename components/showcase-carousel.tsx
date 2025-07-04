@@ -190,7 +190,7 @@ export default function ShowcaseCarousel() {
       onTouchStart={handleTouchStart}
     >
       {/* Main carousel container - improved aspect ratio for mobile */}
-      <div className="relative w-full aspect-[4/5] sm:aspect-[4/3] md:aspect-[16/9]">
+      <div className="relative w-full aspect-[3/4] xs:aspect-[4/5] sm:aspect-[4/3] lg:aspect-[16/10] xl:aspect-[16/9]">
         {/* Subtle golden frame */}
         <div className="absolute inset-0 border-[2px] sm:border-[3px] border-amber-600/40 rounded-lg z-30 pointer-events-none"></div>
 
@@ -235,7 +235,7 @@ export default function ShowcaseCarousel() {
 
         {/* Navigation arrows - smaller on mobile */}
         <button
-          className={`absolute left-1 sm:left-2 top-1/2 -translate-y-1/2 z-40 p-1 sm:p-2 rounded-full
+          className={`absolute left-2 sm:left-3 lg:left-4 top-1/2 -translate-y-1/2 z-40 p-1.5 sm:p-2 lg:p-3 rounded-full
             bg-black/40 hover:bg-black/60 text-white border border-amber-600/30
             transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-amber-400
             ${isTransitioning ? "opacity-50 cursor-not-allowed" : "opacity-90"}`}
@@ -248,7 +248,7 @@ export default function ShowcaseCarousel() {
         </button>
 
         <button
-          className={`absolute right-1 sm:right-2 top-1/2 -translate-y-1/2 z-40 p-1 sm:p-2 rounded-full
+          className={`absolute right-2 sm:right-3 lg:right-4 top-1/2 -translate-y-1/2 z-40 p-1.5 sm:p-2 lg:p-3 rounded-full
             bg-black/40 hover:bg-black/60 text-white border border-amber-600/30
             transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-amber-400
             ${isTransitioning ? "opacity-50 cursor-not-allowed" : "opacity-90"}`}
@@ -262,13 +262,13 @@ export default function ShowcaseCarousel() {
       </div>
 
       {/* Dot indicators - smaller on mobile */}
-      <div className="flex justify-center space-x-2 sm:space-x-3 p-2 sm:p-3 bg-black border-t border-amber-900/30">
+      <div className="flex justify-center space-x-1.5 sm:space-x-2 lg:space-x-3 p-3 sm:p-4 bg-black border-t border-amber-900/30">
         {images.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSpecific(index)}
-            className={`w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3 rounded-full transition-all duration-300
-              ${index === currentIndex ? "bg-amber-400 scale-110" : "bg-gray-600 hover:bg-gray-500"}`}
+            className={`w-2 h-2 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full transition-all duration-300
+              ${index === currentIndex ? "bg-amber-400 scale-110 sm:scale-125" : "bg-gray-600 hover:bg-gray-500"}`}
             aria-label={`Μετάβαση στην εικόνα ${index + 1}`}
             aria-current={index === currentIndex ? "true" : "false"}
             type="button"

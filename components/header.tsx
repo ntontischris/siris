@@ -3,20 +3,19 @@
 import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Menu, X, Phone, ChevronDown } from "lucide-react"
+import { Menu, X, Phone } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import CartDropdown from "./cart-dropdown"
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <header className="bg-black border-b border-amber-900/30 sticky top-0 z-50">
-      <div className="container mx-auto px-4 sm:px-6">
+    <header className="bg-black border-b border-amber-900/30 sticky top-0 z-50" role="banner">
+      <nav className="container mx-auto px-4 sm:px-6" role="navigation" aria-label="Κύρια πλοήγηση">
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <div className="relative w-10 h-10 sm:w-12 sm:h-12 perspective-1000">
+            <div className="relative w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 perspective-1000">
               <div className="w-full h-full animate-logo-spin transform-style-3d">
                 <Image
                   src="/images/logo.png"
@@ -34,53 +33,46 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-6">
-            <Link href="/" className="text-white hover:text-amber-400 transition-colors text-sm font-medium">
+          <nav className="hidden md:flex items-center space-x-4 lg:space-x-6" role="menubar">
+            <Link
+              href="/"
+              className="text-white hover:text-amber-400 transition-colors text-sm font-medium"
+              role="menuitem"
+              aria-current="page"
+            >
               Αρχική
             </Link>
-            <div className="relative group">
-              <button className="flex items-center text-white hover:text-amber-400 transition-colors text-sm font-medium">
-                Προϊόντα
-                <ChevronDown className="ml-1 h-4 w-4" />
-              </button>
-              <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-gray-900 ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                <div className="py-1">
-                  <Link
-                    href="/products/lyres"
-                    className="block px-4 py-2 text-sm text-gray-200 hover:bg-gray-800 hover:text-amber-400"
-                  >
-                    Ποντιακές Λύρες
-                  </Link>
-                  <Link
-                    href="/products/strings"
-                    className="block px-4 py-2 text-sm text-gray-200 hover:bg-gray-800 hover:text-amber-400"
-                  >
-                    Χορδές
-                  </Link>
-                  <Link
-                    href="/products/accessories"
-                    className="block px-4 py-2 text-sm text-gray-200 hover:bg-gray-800 hover:text-amber-400"
-                  >
-                    Αξεσουάρ
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <Link href="/about" className="text-white hover:text-amber-400 transition-colors text-sm font-medium">
+            <Link
+              href="/#products-section"
+              className="text-white hover:text-amber-400 transition-colors text-sm font-medium"
+              role="menuitem"
+            >
+              Προϊόντα
+            </Link>
+            <Link
+              href="/about"
+              className="text-white hover:text-amber-400 transition-colors text-sm font-medium"
+              role="menuitem"
+            >
               Σχετικά με εμάς
             </Link>
-            <Link href="/contact" className="text-white hover:text-amber-400 transition-colors text-sm font-medium">
+            <Link
+              href="/contact"
+              className="text-white hover:text-amber-400 transition-colors text-sm font-medium"
+              role="menuitem"
+            >
               Επικοινωνία
             </Link>
           </nav>
 
           {/* Action Buttons */}
           <div className="hidden md:flex items-center space-x-4">
-            <CartDropdown />
-            <Button size="sm" className="bg-amber-600 hover:bg-amber-700 text-white">
-              <Phone className="mr-1 h-4 w-4" />
-              Επικοινωνία
-            </Button>
+            <Link href="tel:+306946278589">
+              <Button size="sm" className="bg-amber-600 hover:bg-amber-700 text-white text-xs sm:text-sm">
+                <Phone className="mr-1 h-4 w-4" />
+                Επικοινωνία
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -92,50 +84,38 @@ export default function Header() {
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
-      </div>
+      </nav>
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-gray-900 border-t border-gray-800">
-          <div className="container mx-auto px-4 py-3">
-            <nav className="flex flex-col space-y-3 relative">
+        <div
+          className="md:hidden bg-gray-900 border-t border-gray-800 absolute top-full left-0 right-0 z-50"
+          role="menu"
+          aria-label="Κινητό μενού"
+        >
+          <div className="container mx-auto px-4 py-4">
+            <nav className="flex flex-col space-y-4" role="menubar">
               <Link
                 href="/"
                 className="text-white hover:text-amber-400 py-2 transition-colors text-sm font-medium"
                 onClick={() => setIsMenuOpen(false)}
+                role="menuitem"
               >
                 Αρχική
               </Link>
-              <div className="py-2">
-                <div className="flex items-center text-white mb-2 text-sm font-medium">Προϊόντα</div>
-                <div className="pl-4 flex flex-col space-y-2">
-                  <Link
-                    href="/products/lyres"
-                    className="text-gray-300 hover:text-amber-400 text-sm"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Ποντιακές Λύρες
-                  </Link>
-                  <Link
-                    href="/products/strings"
-                    className="text-gray-300 hover:text-amber-400 text-sm"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Χορδές
-                  </Link>
-                  <Link
-                    href="/products/accessories"
-                    className="text-gray-300 hover:text-amber-400 text-sm"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Αξεσουάρ
-                  </Link>
-                </div>
-              </div>
+              <Link
+                href="/#products-section"
+                className="text-white hover:text-amber-400 py-2 transition-colors text-sm font-medium"
+                onClick={() => setIsMenuOpen(false)}
+                role="menuitem"
+              >
+                Προϊόντα
+              </Link>
               <Link
                 href="/about"
                 className="text-white hover:text-amber-400 py-2 transition-colors text-sm font-medium"
                 onClick={() => setIsMenuOpen(false)}
+                role="menuitem"
               >
                 Σχετικά με εμάς
               </Link>
@@ -143,12 +123,10 @@ export default function Header() {
                 href="/contact"
                 className="text-white hover:text-amber-400 py-2 transition-colors text-sm font-medium"
                 onClick={() => setIsMenuOpen(false)}
+                role="menuitem"
               >
                 Επικοινωνία
               </Link>
-              <div className="pt-2 flex items-center">
-                <CartDropdown />
-              </div>
             </nav>
           </div>
         </div>

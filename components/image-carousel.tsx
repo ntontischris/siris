@@ -69,6 +69,21 @@ export default function ImageCarousel() {
     }
   }, [isHovering, isTransitioning])
 
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "ArrowLeft") {
+        goToPrevious()
+      } else if (event.key === "ArrowRight") {
+        goToNext()
+      } else if (event.key === " " || event.key === "Enter") {
+        setIsHovering(!isHovering)
+      }
+    }
+
+    window.addEventListener("keydown", handleKeyDown)
+    return () => window.removeEventListener("keydown", handleKeyDown)
+  }, [isHovering])
+
   // Χειρισμός μετάβασης
   const handleTransition = (callback) => {
     setIsTransitioning(true)
@@ -143,12 +158,15 @@ export default function ImageCarousel() {
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
       onTouchStart={handleTouchStart}
+      role="region"
+      aria-label="Καρουζέλ εικόνων τεχνίτη"
+      aria-live="polite"
     >
       {/* Εφέ φόντου */}
       <div className="absolute inset-0 bg-gradient-to-br from-amber-900/20 to-black/40 z-10"></div>
 
       {/* Εικόνες - βελτιωμένη αναλογία διαστάσεων για κινητά */}
-      <div className="relative w-full aspect-[4/5] sm:aspect-[4/3] md:aspect-[16/9] lg:h-[500px]">
+      <div className="relative w-full aspect-[3/4] xs:aspect-[4/5] sm:aspect-[4/3] lg:aspect-[16/10] xl:h-[500px]">
         {images.map((image, index) => (
           <div
             key={index}
@@ -176,11 +194,11 @@ export default function ImageCarousel() {
 
             {/* Λεζάντα - μικρότερη σε κινητά */}
             <div
-              className={`absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-3 sm:p-4 md:p-6 text-white z-30
+              className={`absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-3 sm:p-4 lg:p-6 text-white z-30
               transform transition-transform duration-1000 ease-out
-              ${index === currentIndex ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+              ${index === currentIndex ? "translate-y-0 opacity-100" : "translate-y-8 sm:translate-y-10 opacity-0"}`}
             >
-              <p className="text-sm sm:text-base md:text-lg font-medium text-amber-300">{image.caption}</p>
+              <p className="text-xs sm:text-sm lg:text-base xl:text-lg font-medium text-amber-300">{image.caption}</p>
             </div>
           </div>
         ))}
@@ -189,11 +207,12 @@ export default function ImageCarousel() {
       {/* Κουμπιά πλοήγησης - μικρότερα σε κινητά */}
       <button
         type="button"
-        className="absolute left-1 sm:left-4 top-1/2 -translate-y-1/2 bg-black/50 border-amber-600/30 hover:bg-black/70 text-amber-400 z-30 p-1 sm:p-2 rounded-full"
+        className="absolute left-2 sm:left-3 lg:left-4 top-1/2 -translate-y-1/2 bg-black/50 border-amber-600/30 hover:bg-black/70 text-amber-400 z-30 p-1.5 sm:p-2 lg:p-3 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-offset-2 focus:ring-offset-black"
         onClick={goToPrevious}
-        aria-label="Προηγούμενη εικόνα"
+        aria-label="Προηγούμενη εικόνα στο καρουζέλ"
+        tabIndex={0}
       >
-        <ChevronLeft className="h-4 w-4 sm:h-6 sm:w-6" />
+        <ChevronLeft className="h-4 w-4 sm:h-6 sm:w-6" aria-hidden="true" />
       </button>
 
       <button

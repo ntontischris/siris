@@ -11,32 +11,7 @@ import { useCart } from "@/context/cart-context"
 const getProductBySlug = (slug: string) => {
   // Sample product data - in a real app, this would be fetched from an API
   const products = {
-    // Υπάρχοντα προϊόντα
-    "galli-013": {
-      id: "galli-013",
-      name: "Χορδή Galli 0,13",
-      description:
-        "Χορδή ακριβείας για ηλεκτρικά και ακουστικά όργανα. Κατασκευασμένη από υψηλής ποιότητας υλικά για καθαρό και δυνατό ήχο. Ιδανική για ποντιακή λύρα και άλλα παραδοσιακά όργανα.",
-      longDescription: `
-        <p>Η χορδή Galli 0,13 είναι μια επαγγελματική χορδή ακριβείας, σχεδιασμένη ειδικά για παραδοσιακά έγχορδα όργανα όπως η ποντιακή λύρα.</p>
-        <p>Κατασκευασμένη από υψηλής ποιότητας κράμα μετάλλων, προσφέρει εξαιρετική αντοχή και διάρκεια ζωής, διατηρώντας παράλληλα την ποιότητα του ήχου για μεγάλο χρονικό διάστημα.</p>
-        <p>Χαρακτηριστικά:</p>
-        <ul>
-          <li>Διάμετρος: 0,13mm</li>
-          <li>Υλικό: Ειδικό κράμα μετάλλων</li>
-          <li>Ιδανική για: Ποντιακή λύρα, παραδοσιακά έγχορδα</li>
-          <li>Χαρακτηριστικός ήχος: Καθαρός και δυνατός</li>
-        </ul>
-      `,
-      price: 1,
-      image: "/images/galli-013.jpeg",
-      gallery: ["/images/galli-013.jpeg", "/images/galli-013-alt.jpeg", "/images/galli-strings-set.jpeg"],
-      inStock: true,
-      rating: 4.8,
-      reviewCount: 24,
-      sku: "GALLI-013",
-      category: "strings",
-    },
+    
     // Νέα προϊόντα
     "cascha-guitar": {
       id: "cascha-guitar",
@@ -217,30 +192,7 @@ const getProductBySlug = (slug: string) => {
       sku: "BOSS-GE7",
       category: "pedals",
     },
-    // Κρατάμε και το υπάρχον galli-set
-    "galli-set": {
-      id: "galli-set",
-      name: "Σετ χορδές Galli 0,14 - LA - LA",
-      description: "Πλήρες σετ χορδών για ποντιακή λύρα",
-      longDescription: `
-        <p>Το πλήρες σετ χορδών Galli για ποντιακή λύρα περιλαμβάνει όλες τις απαραίτητες χορδές για το όργανό σας.</p>
-        <p>Το σετ αποτελείται από μία χορδή Galli 0,14 και δύο χορδές LA, ειδικά επιλεγμένες για να προσφέρουν τον αυθεντικό ήχο της ποντιακής λύρας.</p>
-        <p>Περιεχόμενα σετ:</p>
-        <ul>
-          <li>1 x Χορδή Galli 0,14mm</li>
-          <li>2 x Χορδές LA (A) για βιολί</li>
-        </ul>
-      `,
-      price: 10.5,
-      oldPrice: 12,
-      image: "/images/galli-set.jpeg",
-      gallery: ["/images/galli-set.jpeg", "/images/galli-014.jpeg", "/images/galli-la.jpeg"],
-      inStock: true,
-      rating: 5,
-      reviewCount: 18,
-      sku: "GALLI-SET-01",
-      category: "strings",
-    },
+   
   }
 
   return products[slug as keyof typeof products] || null
