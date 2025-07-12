@@ -131,6 +131,7 @@ export default function Home() {
                 price={179}
                 image="/images/cascha-guitar-sunburst.jpg"
                 badge={{ text: "Για Αρχάριους", color: "blue" }}
+                slug="cascha-guitar"
               />
 
               {/* Βιολιά Cascha */}
@@ -141,6 +142,7 @@ export default function Home() {
                 price={239}
                 image="/images/violin-cascha-new.jpg"
                 badge={{ text: "Πλήρες Σετ", color: "amber" }}
+                slug="cascha-violin-set"
               />
 
               {/* Ουτι SAZ OYTI */}
@@ -151,6 +153,7 @@ export default function Home() {
                 price={499}
                 image="/images/oud-traditional-new.jpg"
                 badge={{ text: "Χειροποίητο", color: "amber" }}
+                slug="saz-oud"
               />
 
               {/* Βαλίτσα Ποντιακής Λύρας */}
@@ -161,6 +164,7 @@ export default function Home() {
                 price={75}
                 image="/images/lyre-case-olympos.jpg"
                 badge={{ text: "Προστασία", color: "blue" }}
+                slug="lyre-case-single"
               />
 
               {/* Κρατάμε και μερικά από τα παλιά προϊόντα */}
@@ -171,6 +175,7 @@ export default function Home() {
                 price={100}
                 image="/images/boss-tu3-new.jpg"
                 badge={{ text: "Boss", color: "blue" }}
+                slug="boss-tu3-tuner"
               />
 
               <ProductCard
@@ -180,6 +185,7 @@ export default function Home() {
                 price={115}
                 image="/images/boss-ge7-new.jpg"
                 badge={{ text: "Boss", color: "blue" }}
+                slug="boss-ge7-equalizer"
               />
 
               <ProductCard
@@ -190,6 +196,7 @@ export default function Home() {
                 oldPrice={12}
                 image="/images/galli-set.jpeg"
                 badge={{ text: "Προσφορά", color: "green" }}
+                slug="galli-set"
               />
 
               <ProductCard
@@ -198,6 +205,7 @@ export default function Home() {
                 description="Τρίχες Μογγολίας για άριστο ήχο, λευκές και μαύρες"
                 image="/images/horsehair-white.jpeg"
                 badge={{ text: "Ποιότητα", color: "amber" }}
+                slug="horsehair-white"
               />
             </div>
 

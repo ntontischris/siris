@@ -3,16 +3,13 @@
 import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowLeft, ShoppingBag, Check, Star, Truck, Shield, RefreshCw } from "lucide-react"
+import { ArrowLeft, Star, Phone, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { useCart } from "@/context/cart-context"
 
 // This would normally come from a database or API
 const getProductBySlug = (slug: string) => {
   // Sample product data - in a real app, this would be fetched from an API
   const products = {
-    
-    // Νέα προϊόντα
     "cascha-guitar": {
       id: "cascha-guitar",
       name: "Κιθάρα Cascha για Αρχάριους",
@@ -30,9 +27,13 @@ const getProductBySlug = (slug: string) => {
           <li>Μάρκα: Cascha</li>
         </ul>
       `,
-      price: 175,
-      image: "/images/cascha-guitar.png",
-      gallery: ["/images/cascha-guitar.png"],
+      price: 199,
+      image: "/images/cascha-guitar-sunburst.jpg",
+      gallery: [
+        "/images/cascha-guitar-sunburst.jpg",
+        "/images/cascha-guitar-black.jpg",
+        "/images/cascha-guitar-natural.jpg",
+      ],
       inStock: true,
       rating: 4.5,
       reviewCount: 12,
@@ -41,23 +42,29 @@ const getProductBySlug = (slug: string) => {
     },
     "cascha-violin-set": {
       id: "cascha-violin-set",
-      name: "Βιολιά Cascha 1/4, 3/4, 4/4",
-      description: "Βιολιά Cascha διαθέσιμα σε διάφορα μεγέθη (1/4, 3/4, 4/4) από σχεδίαση με κάπακι έλατο.",
+      name: "Βιολιά Cascha 1/4, 1/2, 3/4, 4/4",
+      description: "Βιολιά Cascha διαθέσιμα σε διάφορα μεγέθη (1/4, 1/2, 3/4, 4/4) από σχεδίαση με κάπακι έλατο.",
       longDescription: `
         <p>Τα βιολιά Cascha προσφέρουν εξαιρετική ποιότητα κατασκευής και ήχου για μουσικούς κάθε επιπέδου.</p>
         <p>Διαθέσιμα σε τρία διαφορετικά μεγέθη για να καλύψουν τις ανάγκες παιδιών και ενηλίκων.</p>
         <p>Χαρακτηριστικά:</p>
         <ul>
-          <li>Μεγέθη: 1/4, 3/4, 4/4</li>
+          <li>Μεγέθη: 1/4, 1/2, 3/4, 4/4</li>
           <li>Κάπακι: Έλατο</li>
           <li>Σχεδίαση: Παραδοσιακή</li>
           <li>Μάρκα: Cascha</li>
           <li>Περιλαμβάνει: Βιολί, δοξάρι, θήκη</li>
         </ul>
       `,
-      price: 239,
-      image: "/images/cascha-violin-set.png",
-      gallery: ["/images/cascha-violin-set.png"],
+      price: 299,
+      image: "/images/violin-cascha-new.jpg",
+      gallery: [
+        "/images/violin-cascha-new.jpg",
+        "/images/violin-bow-cascha.jpeg",
+        "/images/violin-case-closed.jpeg",
+        "/images/violin-case-open.jpeg",
+        "/images/violin-case-interior.jpeg",
+      ],
       inStock: true,
       rating: 4.7,
       reviewCount: 8,
@@ -80,9 +87,9 @@ const getProductBySlug = (slug: string) => {
           <li>Κατασκευή: Χειροποίητη</li>
         </ul>
       `,
-      price: 49,
-      image: "/images/saz-oud.png",
-      gallery: ["/images/saz-oud.png"],
+      price: 499,
+      image: "/images/oud-traditional-new.jpg",
+      gallery: ["/images/oud-traditional-new.jpg"],
       inStock: true,
       rating: 4.9,
       reviewCount: 15,
@@ -106,8 +113,8 @@ const getProductBySlug = (slug: string) => {
         </ul>
       `,
       price: 75,
-      image: "/images/lyre-case-single.png",
-      gallery: ["/images/lyre-case-single.png"],
+      image: "/images/lyre-case-olympos.jpg",
+      gallery: ["/images/lyre-case-olympos.jpg"],
       inStock: true,
       rating: 4.6,
       reviewCount: 22,
@@ -132,8 +139,8 @@ const getProductBySlug = (slug: string) => {
         </ul>
       `,
       price: 95,
-      image: "/images/lyre-case-double.png",
-      gallery: ["/images/lyre-case-double.png"],
+      image: "/images/lyre-case-olympos.jpg",
+      gallery: ["/images/lyre-case-olympos.jpg"],
       inStock: true,
       rating: 4.8,
       reviewCount: 18,
@@ -158,8 +165,8 @@ const getProductBySlug = (slug: string) => {
         </ul>
       `,
       price: 100,
-      image: "/images/boss-tu3-tuner.png",
-      gallery: ["/images/boss-tu3-tuner.png"],
+      image: "/images/boss-tu3-new.jpg",
+      gallery: ["/images/boss-tu3-new.jpg"],
       inStock: true,
       rating: 4.9,
       reviewCount: 45,
@@ -184,15 +191,61 @@ const getProductBySlug = (slug: string) => {
         </ul>
       `,
       price: 115,
-      image: "/images/boss-ge7-equalizer.png",
-      gallery: ["/images/boss-ge7-equalizer.png"],
+      image: "/images/boss-ge7-new.jpg",
+      gallery: ["/images/boss-ge7-new.jpg"],
       inStock: true,
       rating: 4.7,
       reviewCount: 32,
       sku: "BOSS-GE7",
       category: "pedals",
     },
-   
+    "galli-set": {
+      id: "galli-set",
+      name: "Σετ χορδές Galli",
+      description: "Πλήρες σετ χορδών για ποντιακή λύρα, υψηλής ποιότητας",
+      longDescription: `
+        <p>Το πλήρες σετ χορδών Galli για ποντιακή λύρα περιλαμβάνει όλες τις απαραίτητες χορδές για το όργανό σας.</p>
+        <p>Το σετ αποτελείται από μία χορδή Galli 0,14 και δύο χορδές LA, ειδικά επιλεγμένες για να προσφέρουν τον αυθεντικό ήχο της ποντιακής λύρας.</p>
+        <p>Περιεχόμενα σετ:</p>
+        <ul>
+          <li>1 x Χορδή Galli 0,14mm</li>
+          <li>2 x Χορδές LA (A) για βιολί</li>
+        </ul>
+      `,
+      price: 10.5,
+      oldPrice: 12,
+      image: "/images/galli-set.jpeg",
+      gallery: ["/images/galli-set.jpeg", "/images/galli-014.jpeg", "/images/galli-la.jpeg"],
+      inStock: true,
+      rating: 5,
+      reviewCount: 18,
+      sku: "GALLI-SET-01",
+      category: "strings",
+    },
+    "horsehair-white": {
+      id: "horsehair-white",
+      name: "Τρίχες Δοξαριού",
+      description: "Τρίχες Μογγολίας για άριστο ήχο, λευκές και μαύρες",
+      longDescription: `
+        <p>Οι τρίχες δοξαριού από Μογγολία είναι απαραίτητες για την καλή λειτουργία του δοξαριού της ποντιακής λύρας.</p>
+        <p>Προσφέρουν εξαιρετική ποιότητα ήχου και αντοχή, διαθέσιμες σε λευκό και μαύρο χρώμα.</p>
+        <p>Χαρακτηριστικά:</p>
+        <ul>
+          <li>Προέλευση: Μογγολία</li>
+          <li>Χρώματα: Λευκό, Μαύρο</li>
+          <li>Ποιότητα: Premium</li>
+          <li>Χρήση: Δοξάρια έγχορδων οργάνων</li>
+        </ul>
+      `,
+      price: 15,
+      image: "/images/horsehair-white.jpeg",
+      gallery: ["/images/horsehair-white.jpeg", "/images/horsehair-black.jpeg"],
+      inStock: true,
+      rating: 4.8,
+      reviewCount: 25,
+      sku: "HORSEHAIR-001",
+      category: "accessories",
+    },
   }
 
   return products[slug as keyof typeof products] || null
@@ -200,10 +253,7 @@ const getProductBySlug = (slug: string) => {
 
 export default function ProductPage({ params }: { params: { slug: string } }) {
   const product = getProductBySlug(params.slug)
-  const { addItem } = useCart()
-  const [quantity, setQuantity] = useState(1)
   const [selectedImage, setSelectedImage] = useState(0)
-  const [isAdded, setIsAdded] = useState(false)
 
   if (!product) {
     return (
@@ -212,33 +262,16 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
           <div className="bg-gray-900 rounded-lg p-8 text-center border border-gray-800">
             <h2 className="text-xl font-semibold text-white mb-2">Το προϊόν δεν βρέθηκε</h2>
             <p className="text-gray-400 mb-6">Το προϊόν που αναζητάτε δεν είναι διαθέσιμο ή δεν υπάρχει.</p>
-            <Link href="/eshop">
+            <Link href="/">
               <Button className="bg-amber-600 hover:bg-amber-700 text-white">
                 <ArrowLeft className="mr-2 h-4 w-4" />
-                Επιστροφή στο Κατάστημα
+                Επιστροφή στην Αρχική
               </Button>
             </Link>
           </div>
         </div>
       </div>
     )
-  }
-
-  const handleAddToCart = () => {
-    addItem({
-      id: product.id,
-      name: product.name,
-      price: product.price,
-      image: product.image,
-      quantity,
-    })
-
-    setIsAdded(true)
-
-    // Reset the added state after 2 seconds
-    setTimeout(() => {
-      setIsAdded(false)
-    }, 2000)
   }
 
   return (
@@ -251,18 +284,8 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
               Αρχική
             </Link>
             <span className="mx-2 text-gray-600">/</span>
-            <Link href="/eshop" className="text-gray-400 hover:text-amber-400">
-              E-shop
-            </Link>
-            <span className="mx-2 text-gray-600">/</span>
-            <Link href={`/eshop/${product.category}`} className="text-gray-400 hover:text-amber-400">
-              {product.category === "strings"
-                ? "Χορδές"
-                : product.category === "accessories"
-                  ? "Αξεσουάρ"
-                  : product.category === "lyres"
-                    ? "Ποντιακές Λύρες"
-                    : "Προϊόντα"}
+            <Link href="/#products-section" className="text-gray-400 hover:text-amber-400">
+              Προϊόντα
             </Link>
             <span className="mx-2 text-gray-600">/</span>
             <span className="text-amber-400">{product.name}</span>
@@ -358,107 +381,42 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
               <span className="ml-2 text-sm text-gray-400">SKU: {product.sku}</span>
             </div>
 
-            {/* Add to Cart */}
-            <div className="mb-8">
-              <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
-                <div className="flex items-center">
-                  <button
-                    onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                    className="w-12 h-12 sm:w-10 sm:h-10 flex items-center justify-center text-gray-400 hover:text-white bg-gray-800 rounded-l-md border-r border-gray-700"
-                    aria-label="Μείωση ποσότητας"
-                  >
-                    -
-                  </button>
-                  <input
-                    type="number"
-                    min="1"
-                    value={quantity}
-                    onChange={(e) => {
-                      const val = Number.parseInt(e.target.value)
-                      if (!isNaN(val) && val > 0) {
-                        setQuantity(val)
-                      }
-                    }}
-                    className="w-16 h-12 sm:h-10 bg-gray-800 text-center text-white border-0 focus:ring-0"
-                  />
-                  <button
-                    onClick={() => setQuantity(quantity + 1)}
-                    className="w-12 h-12 sm:w-10 sm:h-10 flex items-center justify-center text-gray-400 hover:text-white bg-gray-800 rounded-r-md border-l border-gray-700"
-                    aria-label="Αύξηση ποσότητας"
-                  >
-                    +
-                  </button>
-                </div>
-
-                <Button
-                  onClick={handleAddToCart}
-                  disabled={!product.inStock}
-                  className={`flex-1 ${
-                    isAdded ? "bg-green-700 hover:bg-green-800" : "bg-amber-600 hover:bg-amber-700"
-                  } text-white`}
-                >
-                  {isAdded ? (
-                    <>
-                      <Check className="mr-2 h-4 w-4" />
-                      Προστέθηκε στο Καλάθι
-                    </>
-                  ) : (
-                    <>
-                      <ShoppingBag className="mr-2 h-4 w-4" />
-                      Προσθήκη στο Καλάθι
-                    </>
-                  )}
-                </Button>
-              </div>
+            {/* Detailed Product Information */}
+            <div className="bg-gray-900 rounded-lg border border-gray-800 p-6 mb-6">
+              <h3 className="text-lg font-semibold text-amber-400 mb-4">Λεπτομέρειες Προϊόντος</h3>
+              <div
+                className="prose prose-invert prose-sm max-w-none prose-headings:text-amber-400 prose-a:text-amber-400 prose-li:text-gray-300"
+                dangerouslySetInnerHTML={{ __html: product.longDescription }}
+              />
             </div>
 
-            {/* Features */}
-            <div className="space-y-4 mb-8">
-              <div className="flex items-start gap-3">
-                <div className="w-10 h-10 rounded-full bg-amber-900/20 flex items-center justify-center flex-shrink-0">
-                  <Truck className="h-5 w-5 text-amber-400" />
-                </div>
-                <div>
-                  <h3 className="font-medium text-white">Δωρεάν Αποστολή</h3>
-                  <p className="text-sm text-gray-400">Για παραγγελίες άνω των 30€</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3">
-                <div className="w-10 h-10 rounded-full bg-amber-900/20 flex items-center justify-center flex-shrink-0">
-                  <RefreshCw className="h-5 w-5 text-amber-400" />
-                </div>
-                <div>
-                  <h3 className="font-medium text-white">Εύκολη Επιστροφή</h3>
-                  <p className="text-sm text-gray-400">Επιστροφή εντός 14 ημερών</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3">
-                <div className="w-10 h-10 rounded-full bg-amber-900/20 flex items-center justify-center flex-shrink-0">
-                  <Shield className="h-5 w-5 text-amber-400" />
-                </div>
-                <div>
-                  <h3 className="font-medium text-white">Εγγύηση Ποιότητας</h3>
-                  <p className="text-sm text-gray-400">Όλα τα προϊόντα μας είναι ελεγμένα</p>
-                </div>
+            {/* Contact for Purchase */}
+            <div className="bg-gradient-to-br from-amber-900/20 to-amber-800/10 rounded-lg border border-amber-900/30 p-6">
+              <h3 className="text-lg font-semibold text-amber-400 mb-3">Ενδιαφέρεστε για αυτό το προϊόν;</h3>
+              <p className="text-gray-300 mb-4">
+                Επικοινωνήστε μαζί μας για περισσότερες πληροφορίες, διαθεσιμότητα και παραγγελία.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <a href="tel:+306946278589" className="flex-1">
+                  <Button className="w-full bg-amber-600 hover:bg-amber-700 text-white">
+                    <Phone className="mr-2 h-4 w-4" />
+                    Κλήση: +30 694 627 8589
+                  </Button>
+                </a>
+                <a href="mailto:siristatidistheo@gmail.com" className="flex-1">
+                  <Button
+                    variant="outline"
+                    className="w-full border-amber-600 text-amber-400 hover:bg-amber-900/20 bg-transparent"
+                  >
+                    <Mail className="mr-2 h-4 w-4" />
+                    Email
+                  </Button>
+                </a>
               </div>
             </div>
           </div>
         </div>
-
         {/* Product Description */}
-        <div className="mt-12">
-          <div className="bg-gray-900 rounded-lg border border-gray-800 overflow-hidden">
-            <div className="p-4 sm:p-6 border-b border-gray-800">
-              <h2 className="text-xl font-semibold text-amber-400">Περιγραφή Προϊόντος</h2>
-            </div>
-            <div
-              className="p-4 sm:p-6 prose prose-invert max-w-none prose-headings:text-amber-400 prose-a:text-amber-400"
-              dangerouslySetInnerHTML={{ __html: product.longDescription }}
-            />
-          </div>
-        </div>
       </div>
     </div>
   )
