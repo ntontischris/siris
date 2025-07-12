@@ -128,7 +128,7 @@ export default function Home() {
                 id="cascha-guitars"
                 name="Κιθάρες Cascha για Αρχάριους"
                 description="Πλήρες σετ κιθάρας με θήκη, κουρδιστήρι, αξεσουάρ και δωρεάν μαθήματα"
-                price={179}
+                price={199}
                 image="/images/cascha-guitar-sunburst.jpg"
                 badge={{ text: "Για Αρχάριους", color: "blue" }}
                 slug="cascha-guitar"
@@ -137,9 +137,9 @@ export default function Home() {
               {/* Βιολιά Cascha */}
               <ProductCard
                 id="cascha-violins"
-                name="Βιολιά Cascha 1/4, 3/4, 4/4"
+                name="Βιολιά Cascha 1/4, 1/2 3/4, 4/4"
                 description="Βιολιά από σχεδίαση κάπακι έλατο Cascha, διαθέσιμα σε διάφορα μεγέθη"
-                price={239}
+                price={299}
                 image="/images/violin-cascha-new.jpg"
                 badge={{ text: "Πλήρες Σετ", color: "amber" }}
                 slug="cascha-violin-set"
@@ -150,7 +150,7 @@ export default function Home() {
                 id="saz-oud-traditional"
                 name="Παραδοσιακό Χειροποίητο Ουτι"
                 description="Κάπακι έλατο, λάμος, ταστιέρα χοράερα από Maoni, μάρκα SAZ OYTI"
-                price={499}
+                price={599}
                 image="/images/oud-traditional-new.jpg"
                 badge={{ text: "Χειροποίητο", color: "amber" }}
                 slug="saz-oud"
