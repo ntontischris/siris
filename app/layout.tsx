@@ -4,6 +4,7 @@ import { Inter } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
+import Chatbot from "@/components/chatbot"
 
 const inter = Inter({ subsets: ["latin", "greek"] })
 
@@ -26,6 +27,7 @@ export default function RootLayout({
             <Header />
             <main className="flex-grow">{children}</main>
             <Footer />
+            <Chatbot />
           </div>
         </ThemeProvider>
       </body>
