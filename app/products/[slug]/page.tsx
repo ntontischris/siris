@@ -406,6 +406,45 @@ const getProductBySlug = (slug: string) => {
       sku: "HORSEHAIR-001",
       category: "accessories",
     },
+    "baglama-handmade": {
+      id: "baglama-handmade",
+      name: "Χειροποίητος Μπαγλαμάς Νο.5Α",
+      description: "Χειροποίητος μπαγλαμάς με δούγιες από καρυδιά, κάπακι έλατο και ταστιέρα από έβενο.",
+      longDescription: `
+<p><strong>Χειροποίητος Μπαγλαμάς Νο.5Α</strong></p>
+<p>Παραδοσιακό χειροποίητο όργανο υψηλής ποιότητας με εξαιρετική κατασκευή και ήχο.</p>
+
+<p><strong>Χαρακτηριστικά:</strong></p>
+<ul>
+  <li>Χειροποίητος</li>
+  <li>Σκάφος: Walnut / Καρυδιά</li>
+  <li>Δούγιες: 11</li>
+  <li>Καπάκι: Spruce / Έλατο</li>
+  <li>Ταστιέρα – Χορδιέρα: Ebony / Έβενος</li>
+  <li>Παραδοσιακή κατασκευή</li>
+  <li>Εξαιρετική ποιότητα ήχου</li>
+  <li>Ιδανικό για επαγγελματίες και προχωρημένους μουσικούς</li>
+</ul>
+
+<p><strong>Περιγραφή:</strong></p>
+<p>Ο μπαγλαμάς είναι ένα παραδοσιακό έγχορδο όργανο που χρησιμοποιείται ευρέως στη λαϊκή μουσική. Αυτό το χειροποίητο όργανο διακρίνεται για την εξαιρετική ποιότητα κατασκευής του, με σκάφος από καρυδιά που προσφέρει πλούσιο και ζεστό ήχο.</p>
+`,
+      price: 450,
+      image: "/images/baglama-full-view.jpeg",
+      gallery: [
+        "/images/baglama-full-view.jpeg",
+        "/images/baglama-full-side.jpeg",
+        "/images/baglama-soundboard-angle.jpeg",
+        "/images/baglama-front-full.jpeg",
+        "/images/baglama-headstock-detail.jpeg",
+        "/images/baglama-back-ribs.jpeg",
+      ],
+      inStock: true,
+      rating: 4.8,
+      reviewCount: 12,
+      sku: "BAGLAMA-HM-001",
+      category: "traditional",
+    },
   }
 
   return products[slug as keyof typeof products] || null

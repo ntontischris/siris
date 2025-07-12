@@ -167,6 +167,17 @@ export default function Home() {
                 slug="bouzouki-student-set"
               />
 
+              {/* Μπαγλαμάς Χειροποίητος */}
+              <ProductCard
+                id="baglama-handmade"
+                name="Χειροποίητος Μπαγλαμάς Νο.5Α"
+                description="Χειροποίητος μπαγλαμάς με δούγιες από καρυδιά, κάπακι έλατο και ταστιέρα από έβενο"
+                price={499}
+                image="/images/baglama-full-view.jpeg"
+                badge={{ text: "Χειροποίητος", color: "amber" }}
+                slug="baglama-handmade"
+              />
+
               {/* Βαλίτσα Ποντιακής Λύρας */}
               <ProductCard
                 id="lyre-case-pontiac"
