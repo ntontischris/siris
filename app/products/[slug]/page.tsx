@@ -445,6 +445,73 @@ const getProductBySlug = (slug: string) => {
       sku: "BAGLAMA-HM-001",
       category: "traditional",
     },
+    "pontic-lyres-custom": {
+      id: "pontic-lyres-custom",
+      name: "Χειροποίητες Ποντιακές Λύρες",
+      description:
+        "Ποντιακές λύρες από 400€ με ξύλο της επιλογής σας, χειροποίητες από τον μάστορα Θεόδωρο Σιριστατίδη.",
+      longDescription: `
+<p><strong>Χειροποίητες Ποντιακές Λύρες</strong></p>
+<p>Αυθεντικές ποντιακές λύρες κατασκευασμένες με παραδοσιακές τεχνικές και σύγχρονη ακρίβεια.</p>
+
+
+<p><strong>Χαρακτηριστικά:</strong></p>
+<ul>
+  <li>Χειροποίητη κατασκευή</li>
+  <li>Παραδοσιακή τεχνική</li>
+  <li>Επιλογή ξύλου κατά προτίμηση</li>
+  <li>Εξαιρετική ποιότητα ήχου</li>
+  <li>Σκαλιστή κεφαλή με διακοσμητικά</li>
+  <li>Επαγγελματικό φινίρισμα</li>
+</ul>
+
+<p><strong>Παραγγελία:</strong></p>
+<p>Κάθε λύρα κατασκευάζεται κατόπιν παραγγελίας. Επικοινωνήστε μαζί μας για να συζητήσουμε τις προδιαγραφές και τον χρόνο παράδοσης.</p>
+`,
+      price: 400,
+      image: "/images/pontic-lyres-collection.jpeg",
+      gallery: ["/images/pontic-lyres-collection.jpeg"],
+      inStock: true,
+      rating: 4.9,
+      reviewCount: 28,
+      sku: "LYRE-CUSTOM-001",
+      category: "traditional",
+    },
+    "professional-bow": {
+      id: "professional-bow",
+      name: "Δοξάρι Υψηλής Ποιότητας",
+      description: "Δοξάρι υψηλής ποιότητας με τρίχα Μογγολίας για ποντιακή λύρα.",
+      longDescription: `
+<p><strong>Δοξάρι Υψηλής Ποιότητας με Τρίχα Μογγολίας</strong></p>
+<p>Επαγγελματικό δοξάρι κατασκευασμένο με τα καλύτερα υλικά για εξαιρετική απόδοση.</p>
+
+<p><strong>Χαρακτηριστικά:</strong></p>
+<ul>
+  <li>Τρίχα από Μογγολία υψηλής ποιότητας</li>
+  <li>Ξύλινη κατασκευή με επαγγελματικό φινίρισμα</li>
+  <li>Εργονομική λαβή για άνετη χρήση</li>
+  <li>Εξαιρετική ισορροπία και ελεγχόμενη τάση</li>
+  <li>Ανθεκτική κατασκευή</li>
+</ul>
+
+<p><strong>Προδιαγραφές:</strong></p>
+<ul>
+  <li>Υλικό: Επιλεγμένο ξύλο</li>
+  <li>Τρίχα: Φυσική τρίχα Μογγολίας</li>
+  <li>Μήκος: Τυπικό μήκος για ποντιακή λύρα</li>
+  <li>Βάρος: Ισορροπημένο για άνετη χρήση</li>
+</ul>
+
+`,
+      price: 70,
+      image: "/images/professional-bows.jpeg",
+      gallery: ["/images/professional-bows.jpeg"],
+      inStock: true,
+      rating: 4.7,
+      reviewCount: 19,
+      sku: "BOW-PROF-001",
+      category: "accessories",
+    },
   }
 
   return products[slug as keyof typeof products] || null
@@ -560,7 +627,10 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
             {/* Price */}
             <div className="mb-6">
               <div className="flex items-center gap-2">
-                <span className="text-2xl font-bold text-white">{product.price.toFixed(2)}€</span>
+                <span className="text-2xl font-bold text-white">
+                  {product.id === "pontic-lyres-custom" ? "Από " : ""}
+                  {product.price.toFixed(2)}€
+                </span>
                 {product.oldPrice && (
                   <span className="text-lg text-gray-500 line-through">{product.oldPrice.toFixed(2)}€</span>
                 )}

@@ -123,6 +123,28 @@ export default function Home() {
             </div>
 
             <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+              {/* Χειροποίητες Ποντιακές Λύρες - Κύριο προϊόν */}
+              <ProductCard
+                id="pontic-lyres-custom"
+                name="Χειροποίητες Ποντιακές Λύρες"
+                description="Από 400€ με ξύλο της επιλογής σας, χειροποίητες από τον μάστορα Θεόδωρο Σιριστατίδη"
+                price={400}
+                image="/images/pontic-lyres-collection.jpeg"
+                badge={{ text: "Χειροποίητες", color: "amber" }}
+                slug="pontic-lyres-custom"
+              />
+
+              {/* Δοξάρι Υψηλής Ποιότητας */}
+              <ProductCard
+                id="professional-bow"
+                name="Δοξάρι Υψηλής Ποιότητας"
+                description="Δοξάρι με τρίχα Μογγολίας, ιδανικό για ποντιακή λύρα και άλλα έγχορδα όργανα"
+                price={70}
+                image="/images/professional-bows.jpeg"
+                badge={{ text: "Επαγγελματικό", color: "amber" }}
+                slug="professional-bow"
+              />
+
               {/* Κιθάρες Cascha */}
               <ProductCard
                 id="cascha-guitars"
@@ -193,7 +215,7 @@ export default function Home() {
               <ProductCard
                 id="lyre-case-single-olympus"
                 name="OLYMPUS LC-100 - Θήκη Ποντιακής Λύρας Μονή"
-                description="Σκληρή θήκη-βαλίτσα με λουρί ώμου, εξαιρετική προστασία και ελαφριά κατασκευή"
+                description="Σκ ληρή θήκη-βαλίτσα με λουρί ώμου, εξαιρετική προστασία και ελαφριά κατασκευή"
                 price={75}
                 image="/images/lyre-case-single-olympus.jpeg"
                 badge={{ text: "OLYMPUS", color: "blue" }}
@@ -261,7 +283,7 @@ export default function Home() {
             <div className="text-center mb-10">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-amber-400">Επικοινωνία</h2>
               <p className="text-gray-400 mt-3 max-w-2xl mx-auto">
-                Βρείτε μας και επικοινωνήστε μαζί μας για οποιαδήποτε ερώτηση ή παραγγελία
+                Βρείτε μας και επικοινωνήστε μαζί μας για οποιαδήποτε ερώτηση ή πα��αγγελία
               </p>
             </div>
 
