@@ -160,11 +160,22 @@ export default function Home() {
               <ProductCard
                 id="lyre-case-pontiac"
                 name="Βαλίτσα Ποντιακής Λύρας"
-                description="Μονή θήκη για ποντιακή λύρα, υψηλής ποιότητας προστασία"
-                price={75}
+                description="Διπλή θήκη για ποντιακή λύρα, υψηλής ποιότητας προστασία"
+                price={90}
                 image="/images/lyre-case-olympos.jpg"
                 badge={{ text: "Προστασία", color: "blue" }}
                 slug="lyre-case-single"
+              />
+
+              {/* Βαλίτσα Ποντιακής Λύρας - Μονή OLYMPUS */}
+              <ProductCard
+                id="lyre-case-single-olympus"
+                name="OLYMPUS LC-100 - Θήκη Ποντιακής Λύρας Μονή"
+                description="Σκληρή θήκη-βαλίτσα με λουρί ώμου, εξαιρετική προστασία και ελαφριά κατασκευή"
+                price={75}
+                image="/images/lyre-case-single-olympus.jpeg"
+                badge={{ text: "OLYMPUS", color: "blue" }}
+                slug="lyre-case-single-olympus"
               />
 
               {/* Κρατάμε και μερικά από τα παλιά προϊόντα */}
