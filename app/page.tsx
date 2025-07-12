@@ -150,10 +150,21 @@ export default function Home() {
                 id="saz-oud-traditional"
                 name="Παραδοσιακό Χειροποίητο Ουτι"
                 description="Κάπακι έλατο, λάμος, ταστιέρα χοράερα από Maoni, μάρκα SAZ OYTI"
-                price={599}
+                price={499}
                 image="/images/oud-traditional-new.jpg"
                 badge={{ text: "Χειροποίητο", color: "amber" }}
                 slug="saz-oud"
+              />
+
+              {/* Μπουζούκι Μαθητικό */}
+              <ProductCard
+                id="bouzouki-student"
+                name="Σετ Μαθητικό Μπουζούκι 8-χορδο"
+                description="Μπουζούκι 3/4 για μικρούς μαθητές με πλήρες σετ αξεσουάρ"
+                price={299}
+                image="/images/bouzouki-set-complete.jpeg"
+                badge={{ text: "Μαθητικό", color: "blue" }}
+                slug="bouzouki-student-set"
               />
 
               {/* Βαλίτσα Ποντιακής Λύρας */}
@@ -203,10 +214,9 @@ export default function Home() {
                 id="galli-set"
                 name="Σετ χορδές Galli"
                 description="Πλήρες σετ χορδών για ποντιακή λύρα, υψηλής ποιότητας"
-                price={10.5}
-                oldPrice={12}
+                price={12}
                 image="/images/galli-set.jpeg"
-                badge={{ text: "Προσφορά", color: "green" }}
+                badge={{ text: "Galli", color: "green" }}
                 slug="galli-set"
               />
 
@@ -214,6 +224,7 @@ export default function Home() {
                 id="horsehair-white"
                 name="Τρίχες Δοξαριού"
                 description="Τρίχες Μογγολίας για άριστο ήχο, λευκές και μαύρες"
+                price={12}
                 image="/images/horsehair-white.jpeg"
                 badge={{ text: "Ποιότητα", color: "amber" }}
                 slug="horsehair-white"

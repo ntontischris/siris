@@ -154,6 +154,48 @@ const getProductBySlug = (slug: string) => {
       sku: "SAZ-OYTI-001",
       category: "traditional",
     },
+    "bouzouki-student-set": {
+      id: "bouzouki-student-set",
+      name: "Σετ Μαθητικό Μπουζούκι 8-χορδο Ελληνικό 3/4",
+      description:
+        "Μπουζούκι 8-χορδο Ελληνικό με μικρό μέγεθος 3/4, για μικρούς μαθητές που κάνουν τα πρώτα τους βήματα στην εκμάθηση.",
+      longDescription: `
+<p><strong>Σετ Μαθητικό Μπουζούκι 8-χορδο Ελληνικό 3/4</strong></p>
+<p>Ιδανικό για μικρούς μαθητές που κάνουν τα πρώτα τους βήματα στην εκμάθηση του μπουζουκιού.</p>
+
+<p><strong>Το Σετ συμπεριλαμβάνει:</strong></p>
+<ul>
+  <li>Μπουζούκι Ελληνικό 1Μ 3/4 8-χορδο Μαθητικό</li>
+  <li>Θήκη Μπουζουκιού Soft</li>
+  <li>Ψηφιακό Κουρδιστήρι</li>
+  <li>Θήκη για πέννες</li>
+  <li>Πέννες</li>
+</ul>
+
+<p><strong>Χαρακτηριστικά:</strong></p>
+<ul>
+  <li>Μέγεθος: 3/4</li>
+  <li>Ταστιέρα: Οξιά</li>
+  <li>Σώμα – Σκάφος: Οξιά</li>
+  <li>Πλαστική φιγούρα</li>
+  <li>Καπάκι: Οξιά</li>
+  <li>8-χορδο σύστημα</li>
+  <li>Ελληνικό στυλ</li>
+</ul>
+`,
+      price: 189,
+      image: "/images/bouzouki-set-complete.jpeg",
+      gallery: [
+        "/images/bouzouki-set-complete.jpeg",
+        "/images/bouzouki-front-decorated.jpeg",
+        "/images/bouzouki-back-wood.jpeg",
+      ],
+      inStock: true,
+      rating: 4.6,
+      reviewCount: 14,
+      sku: "BOUZOUKI-STU-001",
+      category: "traditional",
+    },
     "lyre-case-single": {
       id: "lyre-case-single",
       name: "OLYMPUS LC-200 PolyFoam - Σκληρή Θήκη Ποντιακής Λύρας Διπλή",
