@@ -84,7 +84,6 @@ export default function ProductCard({ id, name, description, price, oldPrice, im
                       <span className="text-xs sm:text-sm text-gray-500 line-through">{oldPrice.toFixed(2)}€</span>
                     )}
                   </div>
-                  <span className="text-xs text-gray-500">Με ΦΠΑ</span>
                 </>
               ) : (
                 <span className="text-amber-400 font-semibold text-sm sm:text-base">Κατόπιν επικοινωνίας</span>

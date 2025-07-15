@@ -635,7 +635,6 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
                   <span className="text-lg text-gray-500 line-through">{product.oldPrice.toFixed(2)}€</span>
                 )}
               </div>
-              <span className="text-sm text-gray-500">Συμπεριλαμβάνεται ΦΠΑ 24%</span>
             </div>
 
             {/* Stock Status */}
