@@ -176,129 +176,135 @@ export default function Chatbot() {
   return (
     <>
       {/* Chat Button */}
-      <div className="fixed bottom-4 right-4 z-50">
+      <div className="fixed bottom-4 right-4 z-40">
         <Button
           onClick={() => setIsOpen(!isOpen)}
-          className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-amber-600 hover:bg-amber-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
+          className="w-14 h-14 rounded-full bg-amber-600 hover:bg-amber-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
           aria-label="Άνοιγμα chatbot"
         >
-          {isOpen ? <X className="h-5 w-5 sm:h-6 sm:w-6" /> : <MessageCircle className="h-5 w-5 sm:h-6 sm:w-6" />}
+          {isOpen ? <X className="h-6 w-6" /> : <MessageCircle className="h-6 w-6" />}
         </Button>
       </div>
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-16 right-4 sm:bottom-20 sm:right-6 w-[calc(100vw-2rem)] max-w-sm sm:max-w-md h-[70vh] max-h-[500px] bg-gradient-to-br from-gray-900 to-gray-800 border border-amber-900/30 rounded-xl shadow-2xl z-50 flex flex-col overflow-hidden">
-          {/* Header */}
-          <div className="bg-gradient-to-r from-amber-600 to-amber-700 p-3 sm:p-4 flex items-center justify-between">
-            <div className="flex items-center space-x-2 sm:space-x-3">
-              <div className="w-6 h-6 sm:w-8 sm:h-8 bg-white/20 rounded-full flex items-center justify-center">
-                <Bot className="h-3 w-3 sm:h-5 sm:w-5 text-white" />
-              </div>
-              <div>
-                <h3 className="text-white font-semibold text-xs sm:text-sm">Βοηθός Σιριστατίδη</h3>
-                <p className="text-amber-100 text-xs hidden sm:block">Παραδοσιακά Όργανα</p>
-              </div>
-            </div>
-            <div className="flex items-center space-x-1">
-              <Button
-                onClick={handleRefresh}
-                variant="ghost"
-                size="sm"
-                className="text-white hover:bg-white/20 p-1 sm:p-2"
-                title="Νέα συνομιλία"
-              >
-                <RotateCcw className="h-3 w-3 sm:h-4 sm:w-4" />
-              </Button>
-              <Button
-                onClick={() => setIsOpen(false)}
-                variant="ghost"
-                size="sm"
-                className="text-white hover:bg-white/20 p-1 sm:p-2"
-              >
-                <X className="h-3 w-3 sm:h-4 sm:w-4" />
-              </Button>
-            </div>
-          </div>
+        <div className="fixed inset-0 z-50 md:inset-auto md:bottom-16 md:right-4 md:w-96 md:h-[500px]">
+          {/* Mobile backdrop */}
+          <div className="absolute inset-0 bg-black/50 md:hidden" onClick={() => setIsOpen(false)} />
 
-          {/* Messages */}
-          <div className="flex-1 overflow-y-auto p-3 sm:p-4 space-y-3 sm:space-y-4">
-            {messages.map((message) => (
-              <div key={message.id} className={`flex ${message.isBot ? "justify-start" : "justify-end"}`}>
-                <div
-                  className={`max-w-[85%] p-2 sm:p-3 rounded-lg ${
-                    message.isBot ? "bg-gray-700 text-white" : "bg-amber-600 text-white"
-                  }`}
-                >
-                  <div className="flex items-start space-x-2">
-                    {message.isBot && <Bot className="h-3 w-3 sm:h-4 sm:w-4 mt-0.5 flex-shrink-0" />}
-                    {!message.isBot && <User className="h-3 w-3 sm:h-4 sm:w-4 mt-0.5 flex-shrink-0" />}
-                    <p className="text-xs sm:text-sm leading-relaxed">{message.text}</p>
-                  </div>
+          {/* Chat container */}
+          <div className="relative h-full w-full bg-gradient-to-br from-gray-900 to-gray-800 border border-amber-900/30 md:rounded-xl shadow-2xl flex flex-col overflow-hidden md:max-h-[500px]">
+            {/* Header */}
+            <div className="bg-gradient-to-r from-amber-600 to-amber-700 p-3 flex items-center justify-between flex-shrink-0">
+              <div className="flex items-center space-x-2">
+                <div className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center">
+                  <Bot className="h-4 w-4 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-white font-semibold text-sm">Βοηθός Σιριστατίδη</h3>
+                  <p className="text-amber-100 text-xs">Παραδοσιακά Όργανα</p>
                 </div>
               </div>
-            ))}
-
-            {/* Quick Questions */}
-            {showQuickQuestions && (
-              <div className="space-y-2">
-                <p className="text-amber-400 text-xs font-medium">Συχνές Ερωτήσεις:</p>
-                {quickQuestions.map((q) => (
-                  <button
-                    key={q.id}
-                    onClick={() => handleQuickQuestion(q)}
-                    className="w-full text-left p-2 bg-gray-800 hover:bg-gray-700 rounded-lg text-gray-300 hover:text-white text-xs transition-colors border border-gray-700 hover:border-amber-900/40"
-                  >
-                    {q.question}
-                  </button>
-                ))}
+              <div className="flex items-center space-x-1">
+                <Button
+                  onClick={handleRefresh}
+                  variant="ghost"
+                  size="sm"
+                  className="text-white hover:bg-white/20 p-2"
+                  title="Νέα συνομιλία"
+                >
+                  <RotateCcw className="h-4 w-4" />
+                </Button>
+                <Button
+                  onClick={() => setIsOpen(false)}
+                  variant="ghost"
+                  size="sm"
+                  className="text-white hover:bg-white/20 p-2"
+                >
+                  <X className="h-4 w-4" />
+                </Button>
               </div>
-            )}
+            </div>
 
-            {/* Typing Indicator */}
-            {isTyping && (
-              <div className="flex justify-start">
-                <div className="bg-gray-700 p-2 sm:p-3 rounded-lg">
-                  <div className="flex items-center space-x-2">
-                    <Bot className="h-3 w-3 sm:h-4 sm:w-4" />
-                    <div className="flex space-x-1">
-                      <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-gray-400 rounded-full animate-bounce"></div>
-                      <div
-                        className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-gray-400 rounded-full animate-bounce"
-                        style={{ animationDelay: "0.1s" }}
-                      ></div>
-                      <div
-                        className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-gray-400 rounded-full animate-bounce"
-                        style={{ animationDelay: "0.2s" }}
-                      ></div>
+            {/* Messages */}
+            <div className="flex-1 overflow-y-auto p-3 space-y-3 min-h-0">
+              {messages.map((message) => (
+                <div key={message.id} className={`flex ${message.isBot ? "justify-start" : "justify-end"}`}>
+                  <div
+                    className={`max-w-[85%] p-3 rounded-lg ${
+                      message.isBot ? "bg-gray-700 text-white" : "bg-amber-600 text-white"
+                    }`}
+                  >
+                    <div className="flex items-start space-x-2">
+                      {message.isBot && <Bot className="h-4 w-4 mt-0.5 flex-shrink-0" />}
+                      {!message.isBot && <User className="h-4 w-4 mt-0.5 flex-shrink-0" />}
+                      <p className="text-sm leading-relaxed">{message.text}</p>
                     </div>
                   </div>
                 </div>
-              </div>
-            )}
+              ))}
 
-            <div ref={messagesEndRef} />
-          </div>
+              {/* Quick Questions */}
+              {showQuickQuestions && (
+                <div className="space-y-2">
+                  <p className="text-amber-400 text-sm font-medium">Συχνές Ερωτήσεις:</p>
+                  {quickQuestions.map((q) => (
+                    <button
+                      key={q.id}
+                      onClick={() => handleQuickQuestion(q)}
+                      className="w-full text-left p-2 bg-gray-800 hover:bg-gray-700 rounded-lg text-gray-300 hover:text-white text-sm transition-colors border border-gray-700 hover:border-amber-900/40"
+                    >
+                      {q.question}
+                    </button>
+                  ))}
+                </div>
+              )}
 
-          {/* Input */}
-          <div className="p-3 sm:p-4 border-t border-gray-700">
-            <div className="flex space-x-2">
-              <Input
-                value={inputValue}
-                onChange={(e) => setInputValue(e.target.value)}
-                onKeyPress={handleKeyPress}
-                placeholder="Γράψτε την ερώτησή σας..."
-                className="flex-1 bg-gray-800 border-gray-600 text-white placeholder-gray-400 focus:border-amber-500 text-xs sm:text-sm"
-              />
-              <Button
-                onClick={handleSendMessage}
-                disabled={!inputValue.trim()}
-                className="bg-amber-600 hover:bg-amber-700 text-white px-2 sm:px-3"
-              >
-                <Send className="h-3 w-3 sm:h-4 sm:w-4" />
-              </Button>
+              {/* Typing Indicator */}
+              {isTyping && (
+                <div className="flex justify-start">
+                  <div className="bg-gray-700 p-3 rounded-lg">
+                    <div className="flex items-center space-x-2">
+                      <Bot className="h-4 w-4" />
+                      <div className="flex space-x-1">
+                        <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
+                        <div
+                          className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"
+                          style={{ animationDelay: "0.1s" }}
+                        ></div>
+                        <div
+                          className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"
+                          style={{ animationDelay: "0.2s" }}
+                        ></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              <div ref={messagesEndRef} />
             </div>
-            <p className="text-xs text-gray-500 mt-2">Για άμεση εξυπηρέτηση: +30 694 627 8589</p>
+
+            {/* Input */}
+            <div className="p-3 border-t border-gray-700 flex-shrink-0">
+              <div className="flex space-x-2">
+                <Input
+                  value={inputValue}
+                  onChange={(e) => setInputValue(e.target.value)}
+                  onKeyPress={handleKeyPress}
+                  placeholder="Γράψτε την ερώτησή σας..."
+                  className="flex-1 bg-gray-800 border-gray-600 text-white placeholder-gray-400 focus:border-amber-500 text-sm"
+                />
+                <Button
+                  onClick={handleSendMessage}
+                  disabled={!inputValue.trim()}
+                  className="bg-amber-600 hover:bg-amber-700 text-white px-3 flex-shrink-0"
+                >
+                  <Send className="h-4 w-4" />
+                </Button>
+              </div>
+              <p className="text-xs text-gray-500 mt-2">Για άμεση εξυπηρέτηση: +30 694 627 8589</p>
+            </div>
           </div>
         </div>
       )}
