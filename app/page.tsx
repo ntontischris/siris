@@ -35,8 +35,6 @@ export default function Home() {
         <div className="container px-4 sm:px-6 mx-auto">
           {/* Hero Section */}
           <section className="relative py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24" aria-labelledby="hero-heading">
-            <div className="absolute inset-0 bg-[url('/images/texture.png')] opacity-10 mix-blend-overlay pointer-events-none"></div>
-
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
               <div className="flex flex-col items-center lg:items-start space-y-6 md:space-y-8 text-center lg:text-left">
                 <div className="relative w-24 h-24 xs:w-28 xs:h-28 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 xl:w-56 xl:h-56 mb-4 md:mb-6 perspective-1000 mx-auto lg:mx-0">
@@ -215,7 +213,7 @@ export default function Home() {
               <ProductCard
                 id="lyre-case-single-olympus"
                 name="OLYMPUS LC-100 - Θήκη Ποντιακής Λύρας Μονή"
-                description="Σκ ληρή θήκη-βαλίτσα με λουρί ώμου, εξαιρετική προστασία και ελαφριά κατασκευή"
+                description="Σκ λήρή θήκη-βαλίτσα με λουρί ώμου, εξαιρετική προστασία και ελαφριά κατασκευή"
                 price={75}
                 image="/images/lyre-case-single-olympus.jpeg"
                 badge={{ text: "OLYMPUS", color: "blue" }}
@@ -283,7 +281,7 @@ export default function Home() {
             <div className="text-center mb-10">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-amber-400">Επικοινωνία</h2>
               <p className="text-gray-400 mt-3 max-w-2xl mx-auto">
-                Βρείτε μας και επικοινωνήστε μαζί μας για οποιαδήποτε ερώτηση ή πα��αγγελία
+                Βρείτε μας και επικοινωνήστε μαζί μας για οποιαδήποτε ερώτηση ή παραγγελία
               </p>
             </div>
 

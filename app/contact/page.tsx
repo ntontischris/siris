@@ -13,7 +13,6 @@ export default function ContactPage() {
     <div className="bg-black text-white">
       {/* Hero Section */}
       <section className="relative py-16 md:py-20 border-b border-amber-900/30 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/images/texture.png')] opacity-10 mix-blend-overlay pointer-events-none"></div>
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-amber-600/10 rounded-full blur-3xl"></div>
         <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-amber-600/10 rounded-full blur-3xl"></div>
 

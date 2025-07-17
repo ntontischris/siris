@@ -372,8 +372,7 @@ const getProductBySlug = (slug: string) => {
           <li>2 x Χορδές LA (A) για βιολί</li>
         </ul>
       `,
-      price: 10.5,
-      oldPrice: 12,
+      price: 12,
       image: "/images/galli-set.jpeg",
       gallery: ["/images/galli-set.jpeg", "/images/galli-014.jpeg", "/images/galli-la.jpeg"],
       inStock: true,
@@ -397,7 +396,7 @@ const getProductBySlug = (slug: string) => {
           <li>Χρήση: Δοξάρια έγχορδων οργάνων</li>
         </ul>
       `,
-      price: 15,
+      price: 12,
       image: "/images/horsehair-white.jpeg",
       gallery: ["/images/horsehair-white.jpeg", "/images/horsehair-black.jpeg"],
       inStock: true,

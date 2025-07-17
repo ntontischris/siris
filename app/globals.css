@@ -564,6 +564,9 @@
   .skip-link:focus {
     top: 6px;
   }
+
+  /* Remove or comment out texture references */
+  /* .bg-[url('/images/texture.png')] opacity-10 mix-blend-overlay pointer-events-none */
 }
 
 /* Responsive images */
