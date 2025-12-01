@@ -318,6 +318,17 @@ export default function Home() {
                 badge={{ text: "Αξεσουάρ", color: "green" }}
                 slug="bow-rosin"
               />
+
+              {/* Βαλίτσα Πλαστική Ποντιακής Λύρας */}
+              <ProductCard
+                id="plastic-lyre-case"
+                name="Βαλίτσα Πλαστική Ποντιακής Λύρας"
+                description="Σκληρή πλαστική βαλίτσα με εσωτερική επένδυση"
+                price={75}
+                image="/images/plastic-lyre-case-interior.jpg"
+                badge={{ text: "Πλαστική", color: "blue" }}
+                slug="plastic-lyre-case"
+              />
             </div>
 
             <div className="text-center mt-8 sm:mt-10 md:mt-12">
