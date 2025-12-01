@@ -325,7 +325,7 @@ export default function Home() {
                 name="Βαλίτσα Πλαστική Ποντιακής Λύρας"
                 description="Σκληρή πλαστική βαλίτσα με εσωτερική επένδυση"
                 price={75}
-                image="/images/plastic-lyre-case-interior.jpg"
+                image="/images/plastic-lyre-case-closed.jpg"
                 badge={{ text: "Πλαστική", color: "blue" }}
                 slug="plastic-lyre-case"
               />
