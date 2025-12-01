@@ -198,6 +198,28 @@ export default function Home() {
                 slug="baglama-handmade"
               />
 
+              {/* Βαλίτσα Διπλή Μεταλλική */}
+              <ProductCard
+                id="metal-lyre-case-double"
+                name="Βαλίτσα Διπλή Μεταλλική"
+                description="Σκληρή μεταλλική βαλίτσα σε δύο αποχρώσεις (μαύρη & ασημί)"
+                price={85}
+                image="/images/metal-lyre-case-black.jpg"
+                badge={{ text: "Μεταλλική", color: "blue" }}
+                slug="metal-lyre-case-double"
+              />
+
+              {/* Βαλίτσα Μεταλλική */}
+              <ProductCard
+                id="metal-lyre-case-single"
+                name="Βαλίτσα Μεταλλική"
+                description="Σκληρή μεταλλική βαλίτσα σε δύο αποχρώσεις (μαύρη & ασημί)"
+                price={70}
+                image="/images/metal-lyre-case-single-black.jpg"
+                badge={{ text: "Μεταλλική", color: "blue" }}
+                slug="metal-lyre-case-single"
+              />
+
               {/* Βαλίτσα Ποντιακής Λύρας */}
               <ProductCard
                 id="lyre-case-pontiac"
@@ -220,7 +242,7 @@ export default function Home() {
                 slug="lyre-case-single-olympus"
               />
 
-              {/* Κρατάμε και μερικά από τα παλιά προϊόντα */}
+              {/* Πεταλάκι Boss TU-3 */}
               <ProductCard
                 id="boss-tu3-tuner"
                 name="Πεταλάκι Boss TU-3"
@@ -231,6 +253,7 @@ export default function Home() {
                 slug="boss-tu3-tuner"
               />
 
+              {/* Πεταλάκι Boss GE-7 */}
               <ProductCard
                 id="boss-ge7-equalizer"
                 name="Πεταλάκι Boss GE-7"
@@ -241,9 +264,10 @@ export default function Home() {
                 slug="boss-ge7-equalizer"
               />
 
+              {/* Σετ χορδών Galli */}
               <ProductCard
                 id="galli-set"
-                name="Σετ χορδές Galli"
+                name="Σετ χορδών Galli"
                 description="Πλήρες σετ χορδών για ποντιακή λύρα, υψηλής ποιότητας"
                 price={12}
                 image="/images/galli-set.jpeg"
@@ -251,6 +275,7 @@ export default function Home() {
                 slug="galli-set"
               />
 
+              {/* Τρίχες Δοξαριού */}
               <ProductCard
                 id="horsehair-white"
                 name="Τρίχες Δοξαριού"
@@ -259,6 +284,39 @@ export default function Home() {
                 image="/images/horsehair-white.jpeg"
                 badge={{ text: "Ποιότητα", color: "amber" }}
                 slug="horsehair-white"
+              />
+
+              {/* Καλώδιο Ποντιακής Λύρας */}
+              <ProductCard
+                id="lyre-cable"
+                name="Καλώδιο Ποντιακής Λύρας"
+                description="Επαγγελματικό καλώδιο με υψηλή ποιότητα ήχου"
+                price={20}
+                image="/images/lyre-cable.jpg"
+                badge={{ text: "Αξεσουάρ", color: "green" }}
+                slug="lyre-cable"
+              />
+
+              {/* Κουρδιστήρι Aroma AT-01A */}
+              <ProductCard
+                id="aroma-tuner"
+                name="Κουρδιστήρι Aroma AT-01A"
+                description="Ψηφιακό κουρδιστήρι clip-on με οθόνη LCD"
+                price={10}
+                image="/images/aroma-tuner.jpg"
+                badge={{ text: "Αξεσουάρ", color: "green" }}
+                slug="aroma-tuner"
+              />
+
+              {/* Ρετσίνι Δοξαριού */}
+              <ProductCard
+                id="bow-rosin"
+                name="Ρετσίνι Δοξαριού"
+                description="Επαγγελματικό ρετσίνι από Αυστρία για βιολί, βιόλα και τσέλο"
+                price={5}
+                image="/images/bow-rosin.jpg"
+                badge={{ text: "Αξεσουάρ", color: "green" }}
+                slug="bow-rosin"
               />
             </div>
 
