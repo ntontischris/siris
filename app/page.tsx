@@ -269,7 +269,7 @@ export default function Home() {
                 id="galli-set"
                 name="Σετ χορδών Galli"
                 description="Πλήρες σετ χορδών για ποντιακή λύρα, υψηλής ποιότητας"
-                price={12}
+                price={15}
                 image="/images/galli-set.jpeg"
                 badge={{ text: "Galli", color: "green" }}
                 slug="galli-set"
