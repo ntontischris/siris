@@ -2,6 +2,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
+import { isProductHidden } from "@/lib/hidden-products"
 
 type ProductCardProps = {
   id: string
@@ -18,6 +19,8 @@ type ProductCardProps = {
 }
 
 export default function ProductCard({ id, name, description, price, oldPrice, image, badge, slug }: ProductCardProps) {
+  if (isProductHidden(slug)) return null
+
   const getBadgeColor = () => {
     switch (badge?.color) {
       case "green":

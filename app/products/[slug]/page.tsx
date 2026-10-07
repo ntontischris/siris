@@ -5,9 +5,12 @@ import Image from "next/image"
 import Link from "next/link"
 import { ArrowLeft, Star, Phone, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { isProductHidden } from "@/lib/hidden-products"
 
 // This would normally come from a database or API
 const getProductBySlug = (slug: string) => {
+  if (isProductHidden(slug)) return null
+
   // Sample product data - in a real app, this would be fetched from an API
   const products = {
     "cascha-guitar": {
