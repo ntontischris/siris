@@ -375,7 +375,7 @@ const getProductBySlug = (slug: string) => {
           <li>2 x Χορδές LA (A) για βιολί</li>
         </ul>
       `,
-      price: 12,
+      price: 15,
       image: "/images/galli-set.jpeg",
       gallery: ["/images/galli-set.jpeg", "/images/galli-014.jpeg", "/images/galli-la.jpeg"],
       inStock: true,
