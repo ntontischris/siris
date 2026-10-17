@@ -551,7 +551,7 @@ const getProductBySlug = (slug: string) => {
   <li>Μακροχρόνια αντοχή</li>
 </ul>
 `,
-      price: 85,
+      price: 90,
       image: "/images/metal-lyre-case-black.jpg",
       gallery: [
         "/images/metal-lyre-case-black.jpg",
@@ -603,7 +603,7 @@ const getProductBySlug = (slug: string) => {
   <li>Οικονομική επιλογή για μονή λύρα</li>
 </ul>
 `,
-      price: 70,
+      price: 75,
       image: "/images/metal-lyre-case-single-black.jpg",
       gallery: [
         "/images/metal-lyre-case-single-black.jpg",

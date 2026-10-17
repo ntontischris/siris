@@ -203,7 +203,7 @@ export default function Home() {
                 id="metal-lyre-case-double"
                 name="Βαλίτσα Διπλή Μεταλλική"
                 description="Σκληρή μεταλλική βαλίτσα σε δύο αποχρώσεις (μαύρη & ασημί)"
-                price={85}
+                price={90}
                 image="/images/metal-lyre-case-black.jpg"
                 badge={{ text: "Μεταλλική", color: "blue" }}
                 slug="metal-lyre-case-double"
@@ -214,7 +214,7 @@ export default function Home() {
                 id="metal-lyre-case-single"
                 name="Βαλίτσα Μεταλλική"
                 description="Σκληρή μεταλλική βαλίτσα σε δύο αποχρώσεις (μαύρη & ασημί)"
-                price={70}
+                price={75}
                 image="/images/metal-lyre-case-single-black.jpg"
                 badge={{ text: "Μεταλλική", color: "blue" }}
                 slug="metal-lyre-case-single"
