@@ -31,7 +31,7 @@ export default function Home() {
         Μετάβαση στο κύριο περιεχόμενο
       </a>
 
-      <main id="main-content" className="text-white">
+      <main id="main-content" className="text-white overflow-x-clip">
         <div className="container px-4 sm:px-6 mx-auto">
           {/* Hero Section */}
           <section className="relative py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24" aria-labelledby="hero-heading">
@@ -51,7 +51,7 @@ export default function Home() {
 
                 <h1
                   id="hero-heading"
-                  className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight text-amber-400 leading-tight"
+                  className="text-2xl xs:text-3xl sm:text-4xl lg:text-[2.6rem] xl:text-5xl 2xl:text-6xl font-bold tracking-tight text-amber-400 leading-tight text-balance"
                 >
                   Παραδοσιακά Όργανα <br />
                   <span className="text-white">Υψηλής Τέχνης</span>
@@ -62,14 +62,14 @@ export default function Home() {
                   για την τέχνη.
                 </p>
 
-                <div className="flex flex-col xs:flex-row gap-3 sm:gap-4 pt-4 sm:pt-6 w-full xs:w-auto">
-                  <Link href="/contact" aria-label="Επικοινωνήστε μαζί μας για περισσότερες πληροφορίες">
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4 sm:pt-6 w-full max-w-sm sm:max-w-none sm:w-auto">
+                  <Link href="/contact" className="w-full sm:w-auto" aria-label="Επικοινωνήστε μαζί μας για περισσότερες πληροφορίες">
                     <Button className="btn-gold border-0 text-sm sm:text-base w-full sm:w-auto">
                       <Phone className="mr-2 h-4 w-4" aria-hidden="true" />
                       Επικοινωνήστε μαζί μας
                     </Button>
                   </Link>
-                  <Link href="/about">
+                  <Link href="/about" className="w-full sm:w-auto">
                     <Button
                       variant="outline"
                       className="border-amber-600 text-amber-400 hover:bg-amber-900/20 text-sm sm:text-base w-full sm:w-auto bg-transparent"
@@ -81,8 +81,8 @@ export default function Home() {
               </div>
 
               <div className="relative block">
-                <div className="absolute -top-10 -left-10 w-32 h-32 sm:w-48 sm:h-48 lg:w-64 lg:h-64 bg-amber-600/20 rounded-full blur-3xl"></div>
-                <div className="absolute -bottom-10 -right-10 w-32 h-32 sm:w-48 sm:h-48 lg:w-64 lg:h-64 bg-amber-600/10 rounded-full blur-3xl"></div>
+                <div className="absolute -top-10 left-0 sm:-left-10 w-32 h-32 sm:w-48 sm:h-48 lg:w-64 lg:h-64 bg-amber-600/20 rounded-full blur-3xl"></div>
+                <div className="absolute -bottom-10 right-0 sm:-right-10 w-32 h-32 sm:w-48 sm:h-48 lg:w-64 lg:h-64 bg-amber-600/10 rounded-full blur-3xl"></div>
                 <div className="relative z-10">
                   <ImageCarousel />
                 </div>
@@ -398,7 +398,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
               {/* Phone */}
               <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-6 border border-amber-900/30 text-center card-gold-hover">
                 <div className="w-12 h-12 bg-amber-900/20 rounded-full flex items-center justify-center mb-4 mx-auto">
@@ -406,7 +406,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-lg font-semibold text-amber-400 mb-2">Τηλέφωνο</h3>
                 <p className="text-gray-400 text-sm mb-3">Καλέστε μας για άμεση εξυπηρέτηση</p>
-                <a href="tel:+306946278589" className="text-white hover:text-amber-400 transition-colors font-medium">
+                <a href="tel:+306946278589" className="text-white hover:text-amber-400 transition-colors font-medium whitespace-nowrap">
                   +30 694 627 8589
                 </a>
               </div>
@@ -420,7 +420,7 @@ export default function Home() {
                 <p className="text-gray-400 text-sm mb-3">Στείλτε μας email οποιαδήποτε στιγμή</p>
                 <a
                   href="mailto:siristatidistheo@gmail.com"
-                  className="text-white hover:text-amber-400 transition-colors font-medium"
+                  className="text-white hover:text-amber-400 transition-colors font-medium [overflow-wrap:anywhere] lg:text-sm xl:text-base"
                 >
                   siristatidistheo@gmail.com
                 </a>

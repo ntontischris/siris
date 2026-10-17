@@ -42,7 +42,7 @@ export default function Footer() {
                 Χειροποίητες ποντιακές λύρες από τον μάστορα Θεόδωρο Σιριστατίδη, με σεβασμό στην παράδοση και αγάπη για
                 την τέχνη.
               </p>
-              <div className="flex flex-wrap justify-center sm:justify-start space-x-2 sm:space-x-3 pt-2">
+              <div className="flex flex-wrap gap-2 sm:gap-3 -ml-2 pt-2">
                 <a
                   href="https://www.facebook.com/profile.php?id=100010951200627&locale=el_GR"
                   target="_blank"
@@ -86,27 +86,27 @@ export default function Footer() {
           {/* Quick Links */}
           <div>
             <h3 className="text-lg font-semibold text-amber-400 mb-4">Γρήγορη Πλοήγηση</h3>
-            <ul className="space-y-2">
+            <ul className="space-y-1">
               <li>
-                <Link href="/" className="text-gray-400 hover:text-amber-400 transition-colors text-sm">
+                <Link href="/" className="inline-block py-1 text-gray-400 hover:text-amber-400 transition-colors text-sm">
                   Αρχική
                 </Link>
               </li>
               <li>
                 <Link
                   href="/#products-section"
-                  className="text-gray-400 hover:text-amber-400 transition-colors text-sm"
+                  className="inline-block py-1 text-gray-400 hover:text-amber-400 transition-colors text-sm"
                 >
                   Προϊόντα
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="text-gray-400 hover:text-amber-400 transition-colors text-sm">
+                <Link href="/about" className="inline-block py-1 text-gray-400 hover:text-amber-400 transition-colors text-sm">
                   Σχετικά με εμάς
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-gray-400 hover:text-amber-400 transition-colors text-sm">
+                <Link href="/contact" className="inline-block py-1 text-gray-400 hover:text-amber-400 transition-colors text-sm">
                   Επικοινωνία
                 </Link>
               </li>
@@ -148,21 +148,20 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-800 mt-8 lg:mt-10 pt-4 lg:pt-6 flex flex-col sm:flex-row justify-between items-center text-center sm:text-left">
-          <p className="text-xs sm:text-sm text-gray-500 mb-3 sm:mb-0 flex flex-col sm:flex-row items-center">
-            <span className="mr-1">&copy; {currentYear} SCG.</span>
-            <span className="mr-1">Created by</span>
+        <div className="border-t border-gray-800 mt-8 lg:mt-10 pt-4 lg:pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-center sm:text-left">
+          <p className="text-xs sm:text-sm text-gray-500">
+            &copy; {currentYear} SCG. Created by{" "}
             <a
               href="https://naic.gr"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-400 hover:text-blue-300 font-medium transition-colors duration-200 mx-1"
+              className="text-blue-400 hover:text-blue-300 font-medium transition-colors duration-200"
             >
               naic.gr
             </a>
-            <span>. Όλα τα δικαιώματα διατηρούνται.</span>
+            . <span className="whitespace-nowrap">Όλα τα δικαιώματα διατηρούνται.</span>
           </p>
-          <div className="flex space-x-4">
+          <div className="flex gap-4">
             <Link href="/contact" className="text-xs text-gray-500 hover:text-amber-400 transition-colors">
               Επικοινωνία
             </Link>

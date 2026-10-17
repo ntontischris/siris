@@ -174,12 +174,12 @@ export default function CraftsmanshipSlider() {
       </div>
 
       {/* Dot indicators */}
-      <div className="flex justify-center space-x-2 sm:space-x-3 mt-4 sm:mt-6">
+      <div className="flex justify-center space-x-4 mt-4 sm:mt-6">
         {images.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSpecific(index)}
-            className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
+            className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full transition-all duration-300 relative after:absolute after:-inset-2 after:content-[''] ${
               index === currentIndex ? "bg-amber-400 scale-125" : "bg-gray-500 hover:bg-gray-400"
             }`}
             aria-label={`Μετάβαση στην εικόνα ${index + 1}`}

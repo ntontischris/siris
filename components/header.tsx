@@ -77,8 +77,10 @@ export default function Header() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-gray-300 hover:text-white"
+            type="button"
+            className="md:hidden -mr-2 flex h-11 w-11 items-center justify-center rounded-md text-gray-300 hover:text-white"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-expanded={isMenuOpen}
             aria-label={isMenuOpen ? "Κλείσιμο μενού" : "Άνοιγμα μενού"}
           >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -93,11 +95,11 @@ export default function Header() {
           role="menu"
           aria-label="Κινητό μενού"
         >
-          <div className="container mx-auto px-4 py-4">
-            <nav className="flex flex-col space-y-4" role="menubar">
+          <div className="container mx-auto px-4 py-2">
+            <nav className="flex flex-col space-y-1" role="menubar">
               <Link
                 href="/"
-                className="text-white hover:text-amber-400 py-2 transition-colors text-sm font-medium"
+                className="block text-white hover:text-amber-400 py-3 transition-colors text-base font-medium"
                 onClick={() => setIsMenuOpen(false)}
                 role="menuitem"
               >
@@ -105,7 +107,7 @@ export default function Header() {
               </Link>
               <Link
                 href="/#products-section"
-                className="text-white hover:text-amber-400 py-2 transition-colors text-sm font-medium"
+                className="block text-white hover:text-amber-400 py-3 transition-colors text-base font-medium"
                 onClick={() => setIsMenuOpen(false)}
                 role="menuitem"
               >
@@ -113,7 +115,7 @@ export default function Header() {
               </Link>
               <Link
                 href="/about"
-                className="text-white hover:text-amber-400 py-2 transition-colors text-sm font-medium"
+                className="block text-white hover:text-amber-400 py-3 transition-colors text-base font-medium"
                 onClick={() => setIsMenuOpen(false)}
                 role="menuitem"
               >
@@ -121,7 +123,7 @@ export default function Header() {
               </Link>
               <Link
                 href="/contact"
-                className="text-white hover:text-amber-400 py-2 transition-colors text-sm font-medium"
+                className="block text-white hover:text-amber-400 py-3 transition-colors text-base font-medium"
                 onClick={() => setIsMenuOpen(false)}
                 role="menuitem"
               >
