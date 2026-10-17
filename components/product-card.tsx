@@ -21,17 +21,6 @@ type ProductCardProps = {
 export default function ProductCard({ id, name, description, price, oldPrice, image, badge, slug }: ProductCardProps) {
   if (isProductHidden(slug)) return null
 
-  const getBadgeColor = () => {
-    switch (badge?.color) {
-      case "green":
-        return "bg-green-600"
-      case "blue":
-        return "bg-blue-600"
-      default:
-        return "bg-amber-600"
-    }
-  }
-
   return (
     <Link href={`/products/${slug}`} className="block h-full">
       <article
@@ -42,7 +31,7 @@ export default function ProductCard({ id, name, description, price, oldPrice, im
         {/* Badge */}
         {badge && (
           <div
-            className={`absolute top-2 sm:top-3 left-2 sm:left-3 z-10 ${getBadgeColor()} text-white text-xs font-bold px-2 py-1 rounded-full shadow-md`}
+            className={`absolute top-2 sm:top-3 left-2 sm:left-3 z-10 bg-black/70 backdrop-blur-sm border border-amber-500/50 text-amber-300 text-xs font-semibold tracking-wide px-2.5 py-1 rounded-full shadow-md`}
           >
             {badge.text}
           </div>

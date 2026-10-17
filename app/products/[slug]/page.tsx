@@ -854,7 +854,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
             <h2 className="text-xl font-semibold text-white mb-2">Το προϊόν δεν βρέθηκε</h2>
             <p className="text-gray-400 mb-6">Το προϊόν που αναζητάτε δεν είναι διαθέσιμο ή δεν υπάρχει.</p>
             <Link href="/">
-              <Button className="bg-amber-600 hover:bg-amber-700 text-white">
+              <Button className="btn-gold">
                 <ArrowLeft className="mr-2 h-4 w-4" />
                 Επιστροφή στην Αρχική
               </Button>
@@ -997,7 +997,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <a href="tel:+306946278589" className="flex-1">
-                  <Button className="w-full bg-amber-600 hover:bg-amber-700 text-white">
+                  <Button className="w-full btn-gold">
                     <Phone className="mr-2 h-4 w-4" />
                     Κλήση: +30 694 627 8589
                   </Button>

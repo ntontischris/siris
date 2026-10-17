@@ -68,7 +68,7 @@ export default function Header() {
           {/* Action Buttons */}
           <div className="hidden md:flex items-center space-x-4">
             <Link href="tel:+306946278589">
-              <Button size="sm" className="bg-amber-600 hover:bg-amber-700 text-white text-xs sm:text-sm">
+              <Button size="sm" className="btn-gold text-xs sm:text-sm">
                 <Phone className="mr-1 h-4 w-4" />
                 Επικοινωνία
               </Button>

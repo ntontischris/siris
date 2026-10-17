@@ -27,7 +27,7 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
             <div className="order-2 lg:order-1">
-              <h2 className="text-2xl sm:text-3xl font-bold text-amber-400 mb-6">Η Ιστορία μας</h2>
+              <h2 className="ornament-title ornament-left text-2xl sm:text-3xl font-bold text-amber-400 mb-6">Η Ιστορία μας</h2>
               <div className="space-y-4 text-gray-300">
                 <p>
                   Στο εργαστήριό μας συνεχίζουμε με αγάπη και σεβασμό την οικογενειακή παράδοση στην κατασκευή και
@@ -74,14 +74,14 @@ export default function AboutPage() {
       <section className="py-16 md:py-20 bg-gradient-to-b from-gray-950 to-black border-y border-amber-900/30">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl font-bold text-amber-400 mb-4">Οι Αξίες μας</h2>
+            <h2 className="ornament-title text-2xl sm:text-3xl font-bold text-amber-400 mb-4">Οι Αξίες μας</h2>
             <p className="text-gray-300 max-w-2xl mx-auto">
               Η φιλοσοφία μας βασίζεται σε αρχές που διέπουν κάθε πτυχή της δουλειάς μας
             </p>
           </div>
 
           <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
-            <div className="bg-gray-900 rounded-lg p-6 border border-gray-800 hover:border-amber-900/40 transition-all duration-300 transform hover:-translate-y-1">
+            <div className="bg-gray-900 rounded-lg p-6 border border-amber-900/30 card-gold-hover">
               <div className="w-12 h-12 bg-amber-900/20 rounded-full flex items-center justify-center mb-4">
                 <Award className="h-6 w-6 text-amber-400" />
               </div>
@@ -91,7 +91,7 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="bg-gray-900 rounded-lg p-6 border border-gray-800 hover:border-amber-900/40 transition-all duration-300 transform hover:-translate-y-1">
+            <div className="bg-gray-900 rounded-lg p-6 border border-amber-900/30 card-gold-hover">
               <div className="w-12 h-12 bg-amber-900/20 rounded-full flex items-center justify-center mb-4">
                 <Clock className="h-6 w-6 text-amber-400" />
               </div>
@@ -101,7 +101,7 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="bg-gray-900 rounded-lg p-6 border border-gray-800 hover:border-amber-900/40 transition-all duration-300 transform hover:-translate-y-1">
+            <div className="bg-gray-900 rounded-lg p-6 border border-amber-900/30 card-gold-hover">
               <div className="w-12 h-12 bg-amber-900/20 rounded-full flex items-center justify-center mb-4">
                 <Tool className="h-6 w-6 text-amber-400" />
               </div>
@@ -112,7 +112,7 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="bg-gray-900 rounded-lg p-6 border border-gray-800 hover:border-amber-900/40 transition-all duration-300 transform hover:-translate-y-1">
+            <div className="bg-gray-900 rounded-lg p-6 border border-amber-900/30 card-gold-hover">
               <div className="w-12 h-12 bg-amber-900/20 rounded-full flex items-center justify-center mb-4">
                 <Users className="h-6 w-6 text-amber-400" />
               </div>
@@ -129,7 +129,7 @@ export default function AboutPage() {
       <section className="py-16 md:py-20">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center mb-8 sm:mb-12">
-            <h2 className="text-2xl sm:text-3xl font-bold text-amber-400 mb-4">Η Τέχνη της Κατασκευής</h2>
+            <h2 className="ornament-title text-2xl sm:text-3xl font-bold text-amber-400 mb-4">Η Τέχνη της Κατασκευής</h2>
             <p className="text-gray-300 max-w-2xl mx-auto">
               Ανακαλύψτε τη διαδικασία κατασκευής μέσα από εικόνες από το εργαστήριό μας
             </p>

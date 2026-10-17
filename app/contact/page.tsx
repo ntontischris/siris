@@ -31,7 +31,7 @@ export default function ContactPage() {
         <div className="container mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12 lg:mb-16">
             {/* Phone */}
-            <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-6 border border-gray-800 hover:border-amber-900/40 transition-all duration-300 transform hover:-translate-y-1 text-center group">
+            <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-6 border border-amber-900/30 card-gold-hover text-center group">
               <div className="w-12 h-12 bg-amber-900/20 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-amber-900/30 transition-colors">
                 <Phone className="h-6 w-6 text-amber-400" />
               </div>
@@ -45,7 +45,7 @@ export default function ContactPage() {
               </a>
               <div className="mt-3">
                 <a href="tel:+306946278589">
-                  <Button size="sm" className="bg-amber-600 hover:bg-amber-700 text-white">
+                  <Button size="sm" className="btn-gold">
                     Κλήση Τώρα
                   </Button>
                 </a>
@@ -53,7 +53,7 @@ export default function ContactPage() {
             </div>
 
             {/* Email */}
-            <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-6 border border-gray-800 hover:border-amber-900/40 transition-all duration-300 transform hover:-translate-y-1 text-center group">
+            <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-6 border border-amber-900/30 card-gold-hover text-center group">
               <div className="w-12 h-12 bg-amber-900/20 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-amber-900/30 transition-colors">
                 <Mail className="h-6 w-6 text-amber-400" />
               </div>
@@ -67,7 +67,7 @@ export default function ContactPage() {
               </a>
               <div className="mt-3">
                 <a href="mailto:siristatidistheo@gmail.com">
-                  <Button size="sm" className="bg-amber-600 hover:bg-amber-700 text-white">
+                  <Button size="sm" className="btn-gold">
                     Αποστολή Email
                   </Button>
                 </a>
@@ -75,7 +75,7 @@ export default function ContactPage() {
             </div>
 
             {/* Location */}
-            <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-6 border border-gray-800 hover:border-amber-900/40 transition-all duration-300 transform hover:-translate-y-1 text-center group">
+            <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-6 border border-amber-900/30 card-gold-hover text-center group">
               <div className="w-12 h-12 bg-amber-900/20 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-amber-900/30 transition-colors">
                 <MapPin className="h-6 w-6 text-amber-400" />
               </div>
@@ -97,7 +97,7 @@ export default function ContactPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Button size="sm" className="bg-amber-600 hover:bg-amber-700 text-white">
+                  <Button size="sm" className="btn-gold">
                     Δείτε στο Χάρτη
                   </Button>
                 </a>
@@ -105,7 +105,7 @@ export default function ContactPage() {
             </div>
 
             {/* Hours */}
-            <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-6 border border-gray-800 hover:border-amber-900/40 transition-all duration-300 transform hover:-translate-y-1 text-center">
+            <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-6 border border-amber-900/30 card-gold-hover text-center">
               <div className="w-12 h-12 bg-amber-900/20 rounded-full flex items-center justify-center mb-4 mx-auto">
                 <Clock className="h-6 w-6 text-amber-400" />
               </div>
@@ -160,7 +160,7 @@ export default function ContactPage() {
                 href="https://www.tiktok.com/@siristatidis_theodoros"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-6 border border-gray-800 hover:border-gray-600 transition-all duration-300 transform hover:-translate-y-1 text-center group"
+                className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-6 border border-amber-900/30 card-gold-hover text-center group"
               >
                 <div className="w-12 h-12 bg-gray-700/20 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-gray-700/30 transition-colors">
                   <TikTokIcon className="h-6 w-6 text-white" />
@@ -206,7 +206,7 @@ export default function ContactPage() {
 
               <div className="mt-6 flex flex-col xs:flex-row gap-3 sm:gap-4">
                 <a href="tel:+306946278589">
-                  <Button className="bg-amber-600 hover:bg-amber-700 text-white w-full sm:w-auto">
+                  <Button className="btn-gold w-full sm:w-auto">
                     <Phone className="mr-2 h-4 w-4" />
                     Κλήση Τώρα
                   </Button>
