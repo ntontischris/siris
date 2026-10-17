@@ -86,17 +86,16 @@
   html {
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
+    /* Decorative glows must never cause sideways scrolling on phones */
+    overflow-x: clip;
   }
 
-  /* Better touch targets for mobile */
+  /* Comfortable form fields on touch screens (buttons and links size themselves) */
   @media (max-width: 768px) {
-    button,
-    a,
     input,
     select,
     textarea {
       min-height: 44px;
-      min-width: 44px;
     }
   }
 }
@@ -538,11 +537,11 @@
   }
 
   /* Enhanced focus indicators */
-  button:focus,
-  a:focus,
-  input:focus,
-  select:focus,
-  textarea:focus {
+  button:focus-visible,
+  a:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
     outline: 2px solid #f59e0b;
     outline-offset: 2px;
   }

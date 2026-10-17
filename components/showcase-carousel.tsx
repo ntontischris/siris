@@ -235,7 +235,7 @@ export default function ShowcaseCarousel() {
 
         {/* Navigation arrows - smaller on mobile */}
         <button
-          className={`absolute left-2 sm:left-3 lg:left-4 top-1/2 -translate-y-1/2 z-40 p-1.5 sm:p-2 lg:p-3 rounded-full
+          className={`absolute left-2 sm:left-3 lg:left-4 top-1/2 -translate-y-1/2 z-40 p-2 lg:p-3 rounded-full
             bg-black/40 hover:bg-black/60 text-white border border-amber-600/30
             transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-amber-400
             ${isTransitioning ? "opacity-50 cursor-not-allowed" : "opacity-90"}`}
@@ -248,7 +248,7 @@ export default function ShowcaseCarousel() {
         </button>
 
         <button
-          className={`absolute right-2 sm:right-3 lg:right-4 top-1/2 -translate-y-1/2 z-40 p-1.5 sm:p-2 lg:p-3 rounded-full
+          className={`absolute right-2 sm:right-3 lg:right-4 top-1/2 -translate-y-1/2 z-40 p-2 lg:p-3 rounded-full
             bg-black/40 hover:bg-black/60 text-white border border-amber-600/30
             transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-amber-400
             ${isTransitioning ? "opacity-50 cursor-not-allowed" : "opacity-90"}`}
@@ -262,12 +262,12 @@ export default function ShowcaseCarousel() {
       </div>
 
       {/* Dot indicators - smaller on mobile */}
-      <div className="flex justify-center space-x-1.5 sm:space-x-2 lg:space-x-3 p-3 sm:p-4 bg-black border-t border-amber-900/30">
+      <div className="flex justify-center space-x-3 lg:space-x-4 p-3 sm:p-4 bg-black border-t border-amber-900/30">
         {images.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSpecific(index)}
-            className={`w-2 h-2 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full transition-all duration-300
+            className={`w-2 h-2 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full transition-all duration-300 relative after:absolute after:-inset-2 after:content-['']
               ${index === currentIndex ? "bg-amber-400 scale-110 sm:scale-125" : "bg-gray-600 hover:bg-gray-500"}`}
             aria-label={`Μετάβαση στην εικόνα ${index + 1}`}
             aria-current={index === currentIndex ? "true" : "false"}

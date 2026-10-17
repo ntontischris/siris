@@ -166,7 +166,7 @@ export default function ImageCarousel() {
       <div className="absolute inset-0 bg-gradient-to-br from-amber-900/20 to-black/40 z-10"></div>
 
       {/* Εικόνες - βελτιωμένη αναλογία διαστάσεων για κινητά */}
-      <div className="relative w-full aspect-[3/4] xs:aspect-[4/5] sm:aspect-[4/3] lg:aspect-[16/10] xl:h-[500px]">
+      <div className="relative w-full aspect-[3/4] xs:aspect-[4/5] sm:aspect-[4/3] xl:aspect-auto xl:h-[500px]">
         {images.map((image, index) => (
           <div
             key={index}
@@ -207,7 +207,7 @@ export default function ImageCarousel() {
       {/* Κουμπιά πλοήγησης - μικρότερα σε κινητά */}
       <button
         type="button"
-        className="absolute left-2 sm:left-3 lg:left-4 top-1/2 -translate-y-1/2 bg-black/50 border-amber-600/30 hover:bg-black/70 text-amber-400 z-30 p-1.5 sm:p-2 lg:p-3 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-offset-2 focus:ring-offset-black"
+        className="absolute left-2 sm:left-3 lg:left-4 top-1/2 -translate-y-1/2 bg-black/50 border-amber-600/30 hover:bg-black/70 text-amber-400 z-30 p-2 lg:p-3 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-offset-2 focus:ring-offset-black"
         onClick={goToPrevious}
         aria-label="Προηγούμενη εικόνα στο καρουζέλ"
         tabIndex={0}
@@ -217,7 +217,7 @@ export default function ImageCarousel() {
 
       <button
         type="button"
-        className="absolute right-1 sm:right-4 top-1/2 -translate-y-1/2 bg-black/50 border-amber-600/30 hover:bg-black/70 text-amber-400 z-30 p-1 sm:p-2 rounded-full"
+        className="absolute right-1 sm:right-4 top-1/2 -translate-y-1/2 bg-black/50 border-amber-600/30 hover:bg-black/70 text-amber-400 z-30 p-2 rounded-full"
         onClick={goToNext}
         aria-label="Επόμενη εικόνα"
       >
@@ -225,13 +225,13 @@ export default function ImageCarousel() {
       </button>
 
       {/* Ένδειξη τελειών - μικρότερη σε κινητά */}
-      <div className="absolute bottom-12 sm:bottom-16 left-1/2 -translate-x-1/2 flex space-x-1.5 sm:space-x-3 z-30">
+      <div className="absolute bottom-12 sm:bottom-16 left-1/2 -translate-x-1/2 flex space-x-3 z-30">
         {images.map((_, index) => (
           <button
             key={index}
             type="button"
             onClick={() => goToSpecific(index)}
-            className={`w-1.5 h-1.5 sm:w-2.5 sm:h-2.5 rounded-full transition-all duration-300 
+            className={`w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full transition-all duration-300 relative after:absolute after:-inset-2 after:content-['']
               ${index === currentIndex ? "bg-amber-400 scale-125" : "bg-gray-400/50 hover:bg-gray-300/70"}`}
             aria-label={`Μετάβαση στην εικόνα ${index + 1}`}
           />

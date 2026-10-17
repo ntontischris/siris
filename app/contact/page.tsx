@@ -29,7 +29,7 @@ export default function ContactPage() {
       {/* Contact Information */}
       <section className="py-16 md:py-20">
         <div className="container mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12 lg:mb-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12 lg:mb-16">
             {/* Phone */}
             <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-6 border border-amber-900/30 card-gold-hover text-center group">
               <div className="w-12 h-12 bg-amber-900/20 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-amber-900/30 transition-colors">
@@ -39,7 +39,7 @@ export default function ContactPage() {
               <p className="text-gray-400 text-sm mb-3">Καλέστε μας για άμεση εξυπηρέτηση</p>
               <a
                 href="tel:+306946278589"
-                className="text-white hover:text-amber-400 transition-colors font-medium text-lg"
+                className="text-white hover:text-amber-400 transition-colors font-medium text-lg whitespace-nowrap"
               >
                 +30 694 627 8589
               </a>
@@ -61,7 +61,7 @@ export default function ContactPage() {
               <p className="text-gray-400 text-sm mb-3">Στείλτε μας email οποιαδήποτε στιγμή</p>
               <a
                 href="mailto:siristatidistheo@gmail.com"
-                className="text-white hover:text-amber-400 transition-colors font-medium"
+                className="text-white hover:text-amber-400 transition-colors font-medium [overflow-wrap:anywhere] lg:text-sm xl:text-base"
               >
                 siristatidistheo@gmail.com
               </a>
@@ -204,14 +204,14 @@ export default function ContactPage() {
                 </p>
               </div>
 
-              <div className="mt-6 flex flex-col xs:flex-row gap-3 sm:gap-4">
-                <a href="tel:+306946278589">
+              <div className="mt-6 flex flex-col sm:flex-row gap-3 sm:gap-4">
+                <a href="tel:+306946278589" className="w-full sm:w-auto">
                   <Button className="btn-gold w-full sm:w-auto">
                     <Phone className="mr-2 h-4 w-4" />
                     Κλήση Τώρα
                   </Button>
                 </a>
-                <a href="mailto:siristatidistheo@gmail.com">
+                <a href="mailto:siristatidistheo@gmail.com" className="w-full sm:w-auto">
                   <Button
                     variant="outline"
                     className="border-amber-600 text-amber-400 hover:bg-amber-900/20 w-full sm:w-auto bg-transparent"
@@ -225,7 +225,7 @@ export default function ContactPage() {
 
             {/* Google Maps */}
             <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl overflow-hidden shadow-lg border border-gray-800">
-              <div className="p-4 border-b border-gray-800 flex justify-between items-center">
+              <div className="p-4 border-b border-gray-800 flex flex-wrap justify-between items-center gap-x-4 gap-y-1">
                 <h3 className="text-lg font-semibold text-amber-400">Βρείτε μας</h3>
                 <a
                   href="https://maps.google.com/?q=Κύπρου+12,+Σταυρούπολη,+Θεσσαλονίκη"
