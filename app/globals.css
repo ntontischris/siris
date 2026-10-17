@@ -636,20 +636,3 @@
   }
 }
 
-/* Product card: light sweep across the photo on hover */
-.card-shine::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 20;
-  pointer-events: none;
-  background: linear-gradient(115deg, transparent 30%, rgba(255, 236, 179, 0.28) 50%, transparent 70%);
-  transform: translateX(-120%);
-}
-.group:hover .card-shine::after {
-  transform: translateX(120%);
-  transition: transform 0.9s ease;
-}
-@media (prefers-reduced-motion: reduce) {
-  .card-shine::after { display: none; }
-}

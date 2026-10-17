@@ -48,23 +48,17 @@ export default function ProductCard({ id, name, description, price, oldPrice, im
           </div>
         )}
 
-        <div className="aspect-square relative overflow-hidden card-shine">
-          <div
-            className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"
-            aria-hidden="true"
-          ></div>
+        <div className="aspect-square relative overflow-hidden">
           <Image
             src={image || "/placeholder.svg"}
             width={400}
             height={400}
             alt={`Εικόνα προϊόντος: ${name}`}
-            className="object-contain p-4 transition-transform duration-700 ease-out transform group-hover:scale-105"
+            className="object-contain p-4"
           />
         </div>
 
         <div className="p-3 sm:p-4 lg:p-5 relative flex flex-col flex-1">
-          <div className="absolute -top-10 left-0 right-0 h-10 bg-gradient-to-t from-gray-900 to-transparent"></div>
-
           <h3
             id={`product-${id}-title`}
             className="font-semibold text-sm sm:text-base lg:text-lg text-amber-400 group-hover:text-amber-300 transition-colors duration-300 line-clamp-2"
