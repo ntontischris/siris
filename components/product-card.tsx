@@ -33,9 +33,9 @@ export default function ProductCard({ id, name, description, price, oldPrice, im
   }
 
   return (
-    <Link href={`/products/${slug}`}>
+    <Link href={`/products/${slug}`} className="block h-full">
       <article
-        className="group relative overflow-hidden rounded-lg sm:rounded-xl bg-gradient-to-b from-gray-800 to-gray-900 shadow-lg shadow-black/40 hover:shadow-[0_12px_40px_-8px_rgba(212,160,23,0.35)] transition-all duration-500 transform hover:-translate-y-1.5 border border-amber-900/30 hover:border-amber-500/60 focus-within:ring-2 focus-within:ring-amber-400 cursor-pointer"
+        className="group relative h-full flex flex-col overflow-hidden rounded-lg sm:rounded-xl bg-gradient-to-b from-gray-800 to-gray-900 shadow-lg shadow-black/40 hover:shadow-[0_12px_40px_-8px_rgba(212,160,23,0.35)] transition-all duration-500 transform hover:-translate-y-1.5 border border-amber-900/30 hover:border-amber-500/60 focus-within:ring-2 focus-within:ring-amber-400 cursor-pointer"
         role="article"
         aria-labelledby={`product-${id}-title`}
       >
@@ -62,7 +62,7 @@ export default function ProductCard({ id, name, description, price, oldPrice, im
           />
         </div>
 
-        <div className="p-3 sm:p-4 lg:p-5 relative">
+        <div className="p-3 sm:p-4 lg:p-5 relative flex flex-col flex-1">
           <div className="absolute -top-10 left-0 right-0 h-10 bg-gradient-to-t from-gray-900 to-transparent"></div>
 
           <h3
@@ -76,7 +76,7 @@ export default function ProductCard({ id, name, description, price, oldPrice, im
             {description}
           </p>
 
-          <div className="mt-4">
+          <div className="mt-auto pt-4">
             {/* Price area */}
             <div className="flex flex-col">
               {price !== undefined ? (
