@@ -886,7 +886,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Product Images */}
           <div>
-            <div className="bg-gray-900 rounded-lg overflow-hidden border border-gray-800">
+            <div className="bg-gray-900 rounded-lg overflow-hidden border border-amber-900/30">
               <div className="aspect-square relative">
                 <Image
                   src={product.gallery[selectedImage] || "/placeholder.svg"}
@@ -904,8 +904,10 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
                   <button
                     key={index}
                     onClick={() => setSelectedImage(index)}
-                    className={`bg-gray-900 rounded-md overflow-hidden border ${
-                      selectedImage === index ? "border-amber-600" : "border-gray-800"
+                    className={`bg-gray-900 rounded-md overflow-hidden border transition-all duration-300 hover:-translate-y-0.5 hover:border-amber-500/60 hover:shadow-[0_6px_20px_-6px_rgba(212,160,23,0.4)] ${
+                      selectedImage === index
+                        ? "border-amber-500 shadow-[0_0_16px_-4px_rgba(212,160,23,0.5)]"
+                        : "border-amber-900/30"
                     }`}
                   >
                     <div className="aspect-square relative">
