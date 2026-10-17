@@ -653,6 +653,62 @@ const getProductBySlug = (slug: string) => {
       sku: "CABLE-LYR-001",
       category: "accessories",
     },
+    "lyre-mechanical-tuners": {
+      id: "lyre-mechanical-tuners",
+      name: "Μηχανικά κλειδιά",
+      description: "Μηχανικά κλειδιά",
+      longDescription: "",
+      price: 100,
+      image: "/images/lyre-mechanical-tuners.jpg",
+      gallery: ["/images/lyre-mechanical-tuners.jpg"],
+      inStock: true,
+      rating: 0,
+      reviewCount: 0,
+      sku: "",
+      category: "accessories",
+    },
+    "lyre-capsule-lid": {
+      id: "lyre-capsule-lid",
+      name: "Κάψα για καπάκι",
+      description: "Κάψα για καπάκι",
+      longDescription: "",
+      price: 70,
+      image: "/images/lyre-capsule-lid.jpg",
+      gallery: ["/images/lyre-capsule-lid.jpg"],
+      inStock: true,
+      rating: 0,
+      reviewCount: 0,
+      sku: "",
+      category: "accessories",
+    },
+    "lyre-capsule-bridge": {
+      id: "lyre-capsule-bridge",
+      name: "Κάψα για καβαλάρη",
+      description: "Κάψα για καβαλάρη",
+      longDescription: "",
+      price: 70,
+      image: "/images/lyre-capsule-bridge.jpg",
+      gallery: ["/images/lyre-capsule-bridge.jpg"],
+      inStock: true,
+      rating: 0,
+      reviewCount: 0,
+      sku: "",
+      category: "accessories",
+    },
+    "lyre-capsule-bridge-embedded": {
+      id: "lyre-capsule-bridge-embedded",
+      name: "Φυτευτή κάψα στον καβαλάρη",
+      description: "Φυτευτή κάψα στον καβαλάρη",
+      longDescription: "",
+      price: 100,
+      image: "/images/lyre-capsule-bridge-embedded.jpg",
+      gallery: ["/images/lyre-capsule-bridge-embedded.jpg"],
+      inStock: true,
+      rating: 0,
+      reviewCount: 0,
+      sku: "",
+      category: "accessories",
+    },
     "aroma-tuner": {
       id: "aroma-tuner",
       name: "Κουρδιστήρι Aroma AT-01A",
@@ -871,6 +927,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
             <h1 className="text-2xl sm:text-3xl font-bold text-amber-400 mb-2">{product.name}</h1>
 
             {/* Ratings */}
+            {product.reviewCount > 0 && (
             <div className="flex items-center mb-4">
               <div className="flex">
                 {[...Array(5)].map((_, i) => (
@@ -890,6 +947,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
                 {product.rating} ({product.reviewCount} κριτικές)
               </span>
             </div>
+            )}
 
             <p className="text-gray-300 mb-6">{product.description}</p>
 
@@ -915,10 +973,11 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
               >
                 {product.inStock ? "Διαθέσιμο" : "Εξαντλημένο"}
               </span>
-              <span className="ml-2 text-sm text-gray-400">SKU: {product.sku}</span>
+              {product.sku && <span className="ml-2 text-sm text-gray-400">SKU: {product.sku}</span>}
             </div>
 
             {/* Detailed Product Information */}
+            {product.longDescription && (
             <div className="bg-gray-900 rounded-lg border border-gray-800 p-6 mb-6">
               <h3 className="text-lg font-semibold text-amber-400 mb-4">Λεπτομέρειες Προϊόντος</h3>
               <div
@@ -926,6 +985,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
                 dangerouslySetInnerHTML={{ __html: product.longDescription }}
               />
             </div>
+            )}
 
             {/* Contact for Purchase */}
             <div className="bg-gradient-to-br from-amber-900/20 to-amber-800/10 rounded-lg border border-amber-900/30 p-6">

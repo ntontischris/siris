@@ -329,6 +329,50 @@ export default function Home() {
                 badge={{ text: "Πλαστική", color: "blue" }}
                 slug="plastic-lyre-case"
               />
+
+              {/* Μηχανικά κλειδιά */}
+              <ProductCard
+                id="lyre-mechanical-tuners"
+                name="Μηχανικά κλειδιά"
+                description="Μηχανικά κλειδιά"
+                price={100}
+                image="/images/lyre-mechanical-tuners.jpg"
+                badge={{ text: "Αξεσουάρ", color: "green" }}
+                slug="lyre-mechanical-tuners"
+              />
+
+              {/* Κάψα για καπάκι */}
+              <ProductCard
+                id="lyre-capsule-lid"
+                name="Κάψα για καπάκι"
+                description="Κάψα για καπάκι"
+                price={70}
+                image="/images/lyre-capsule-lid.jpg"
+                badge={{ text: "Αξεσουάρ", color: "green" }}
+                slug="lyre-capsule-lid"
+              />
+
+              {/* Κάψα για καβαλάρη */}
+              <ProductCard
+                id="lyre-capsule-bridge"
+                name="Κάψα για καβαλάρη"
+                description="Κάψα για καβαλάρη"
+                price={70}
+                image="/images/lyre-capsule-bridge.jpg"
+                badge={{ text: "Αξεσουάρ", color: "green" }}
+                slug="lyre-capsule-bridge"
+              />
+
+              {/* Φυτευτή κάψα στον καβαλάρη */}
+              <ProductCard
+                id="lyre-capsule-bridge-embedded"
+                name="Φυτευτή κάψα στον καβαλάρη"
+                description="Φυτευτή κάψα στον καβαλάρη"
+                price={100}
+                image="/images/lyre-capsule-bridge-embedded.jpg"
+                badge={{ text: "Αξεσουάρ", color: "green" }}
+                slug="lyre-capsule-bridge-embedded"
+              />
             </div>
 
             <div className="text-center mt-8 sm:mt-10 md:mt-12">
