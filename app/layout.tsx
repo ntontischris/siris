@@ -32,7 +32,7 @@ export const metadata = {
     siteName: "Σιριστατίδης Θεόδωρος",
     images: [
       {
-        url: "/images/logo.png",
+        url: "/images/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Σιριστατίδης Θεόδωρος - Παραδοσιακά Όργανα",
@@ -45,7 +45,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Σιριστατίδης Θεόδωρος | Παραδοσιακά Όργανα",
     description: "Χειροποίητες ποντιακές λύρες από τον μάστορα Θεόδωρο Σιριστατίδη",
-    images: ["/images/logo.png"],
+    images: ["/images/og-image.jpg"],
   },
   robots: {
     index: true,
