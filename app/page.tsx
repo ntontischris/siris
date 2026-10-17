@@ -31,7 +31,7 @@ export default function Home() {
         Μετάβαση στο κύριο περιεχόμενο
       </a>
 
-      <main id="main-content" className="bg-black text-white">
+      <main id="main-content" className="text-white">
         <div className="container px-4 sm:px-6 mx-auto">
           {/* Hero Section */}
           <section className="relative py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24" aria-labelledby="hero-heading">
@@ -44,7 +44,7 @@ export default function Home() {
                       alt="Siristatidis Theodoros Logo"
                       width={256}
                       height={256}
-                      className="w-full h-full object-contain"
+                      className="w-full h-full object-contain rounded-full"
                     />
                   </div>
                 </div>

@@ -28,7 +28,7 @@ export default function Footer() {
                     alt="Σιριστατίδης Θεόδωρος Logo"
                     width={48}
                     height={48}
-                    className="object-contain"
+                    className="object-contain rounded-full"
                   />
                 </div>
                 <div>

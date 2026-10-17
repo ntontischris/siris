@@ -10,7 +10,7 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <header className="bg-black border-b border-amber-900/30 sticky top-0 z-50" role="banner">
+    <header className="bg-black/75 backdrop-blur-md border-b border-amber-900/30 sticky top-0 z-50" role="banner">
       <nav className="container mx-auto px-4 sm:px-6" role="navigation" aria-label="Κύρια πλοήγηση">
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
@@ -22,7 +22,7 @@ export default function Header() {
                   alt="Σιριστατίδης Θεόδωρος Logo"
                   width={48}
                   height={48}
-                  className="object-contain"
+                  className="object-contain rounded-full"
                 />
               </div>
             </div>

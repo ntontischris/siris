@@ -848,7 +848,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
 
   if (!product) {
     return (
-      <div className="bg-black text-white min-h-screen">
+      <div className="text-white min-h-screen">
         <div className="container mx-auto px-4 sm:px-6 py-12">
           <div className="bg-gray-900 rounded-lg p-8 text-center border border-gray-800">
             <h2 className="text-xl font-semibold text-white mb-2">Το προϊόν δεν βρέθηκε</h2>
@@ -866,7 +866,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
   }
 
   return (
-    <div className="bg-black text-white">
+    <div className="text-white">
       <div className="container mx-auto px-4 sm:px-6 py-12">
         {/* Breadcrumbs */}
         <div className="mb-6">

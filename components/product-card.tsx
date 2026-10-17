@@ -35,7 +35,7 @@ export default function ProductCard({ id, name, description, price, oldPrice, im
   return (
     <Link href={`/products/${slug}`}>
       <article
-        className="group relative overflow-hidden rounded-lg sm:rounded-xl bg-gradient-to-br from-gray-900 to-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-800 hover:border-amber-900/40 focus-within:ring-2 focus-within:ring-amber-400 cursor-pointer"
+        className="group relative overflow-hidden rounded-lg sm:rounded-xl bg-gradient-to-b from-gray-800 to-gray-900 shadow-lg shadow-black/40 hover:shadow-[0_12px_40px_-8px_rgba(212,160,23,0.35)] transition-all duration-500 transform hover:-translate-y-1.5 border border-amber-900/30 hover:border-amber-500/60 focus-within:ring-2 focus-within:ring-amber-400 cursor-pointer"
         role="article"
         aria-labelledby={`product-${id}-title`}
       >
@@ -48,9 +48,9 @@ export default function ProductCard({ id, name, description, price, oldPrice, im
           </div>
         )}
 
-        <div className="aspect-square relative overflow-hidden">
+        <div className="aspect-square relative overflow-hidden card-shine">
           <div
-            className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"
+            className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"
             aria-hidden="true"
           ></div>
           <Image
@@ -58,7 +58,7 @@ export default function ProductCard({ id, name, description, price, oldPrice, im
             width={400}
             height={400}
             alt={`Εικόνα προϊόντος: ${name}`}
-            className="object-contain p-4 transition-all duration-500 transform group-hover:scale-110"
+            className="object-contain p-4 transition-transform duration-700 ease-out transform group-hover:scale-105"
           />
         </div>
 
@@ -82,7 +82,7 @@ export default function ProductCard({ id, name, description, price, oldPrice, im
               {price !== undefined ? (
                 <>
                   <div className="flex items-center gap-1 sm:gap-2">
-                    <span className="text-white font-bold text-sm sm:text-base lg:text-lg">{price.toFixed(2)}€</span>
+                    <span className="text-amber-300 font-bold text-sm sm:text-base lg:text-lg">{price.toFixed(2)}€</span>
                     {oldPrice !== undefined && (
                       <span className="text-xs sm:text-sm text-gray-500 line-through">{oldPrice.toFixed(2)}€</span>
                     )}

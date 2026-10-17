@@ -71,7 +71,14 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
+    /* Warm near-black with soft golden glows, like lamplight in a workshop */
+    background-color: #0c0a08;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 15% 0%, rgba(212, 160, 23, 0.10), transparent 60%),
+      radial-gradient(ellipse 60% 40% at 90% 35%, rgba(146, 113, 14, 0.08), transparent 60%),
+      radial-gradient(ellipse 70% 50% at 20% 80%, rgba(120, 60, 20, 0.08), transparent 60%);
+    background-attachment: fixed;
   }
 
   /* Improved text rendering */
@@ -627,4 +634,22 @@
   .transform {
     transform: none !important;
   }
+}
+
+/* Product card: light sweep across the photo on hover */
+.card-shine::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  pointer-events: none;
+  background: linear-gradient(115deg, transparent 30%, rgba(255, 236, 179, 0.28) 50%, transparent 70%);
+  transform: translateX(-120%);
+}
+.group:hover .card-shine::after {
+  transform: translateX(120%);
+  transition: transform 0.9s ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  .card-shine::after { display: none; }
 }

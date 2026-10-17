@@ -4,7 +4,7 @@ import CraftsmanshipSlider from "@/components/craftsmanship-slider"
 
 export default function AboutPage() {
   return (
-    <div className="bg-black text-white">
+    <div className="text-white">
       {/* Hero Section */}
       <section className="relative py-12 sm:py-16 md:py-20 lg:py-24 border-b border-amber-900/30 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-amber-600/10 rounded-full blur-3xl"></div>
