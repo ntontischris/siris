@@ -9,6 +9,7 @@ import Chatbot from "@/components/chatbot"
 const inter = Inter({ subsets: ["latin", "greek"] })
 
 export const metadata = {
+  metadataBase: new URL("https://www.organasiris.gr"),
   title: "Σιριστατίδης Θεόδωρος | Παραδοσιακά Όργανα",
   description: "Χειροποίητες ποντιακές λύρες από τον μάστορα Θεόδωρο Σιριστατίδη",
   keywords: "ποντιακή λύρα, παραδοσιακά όργανα, χειροποίητα όργανα, Σιριστατίδης, Θεσσαλονίκη",
@@ -27,7 +28,7 @@ export const metadata = {
   openGraph: {
     title: "Σιριστατίδης Θεόδωρος | Παραδοσιακά Όργανα",
     description: "Χειροποίητες ποντιακές λύρες από τον μάστορα Θεόδωρο Σιριστατίδη",
-    url: "https://siristatidis.gr",
+    url: "https://www.organasiris.gr",
     siteName: "Σιριστατίδης Θεόδωρος",
     images: [
       {
