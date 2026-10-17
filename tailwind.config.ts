@@ -49,6 +49,21 @@ const config: Config = {
         accent: "hsl(var(--accent))",
         destructive: "hsl(var(--destructive))",
 
+        // Warm walnut greys instead of the default cold slate
+        gray: {
+          "50": "#faf8f5",
+          "100": "#f2eee8",
+          "200": "#e4ddd3",
+          "300": "#cfc5b8",
+          "400": "#a99d8e",
+          "500": "#857a6c",
+          "600": "#5f564b",
+          "700": "#433c34",
+          "800": "#2a241e",
+          "900": "#1a1612",
+          "950": "#0f0c0a",
+        },
+
         // Custom colors based on the logo
         amber: {
           "50": "#fffbeb",

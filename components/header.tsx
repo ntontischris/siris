@@ -10,7 +10,7 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <header className="bg-black border-b border-amber-900/30 sticky top-0 z-50" role="banner">
+    <header className="bg-black/75 backdrop-blur-md border-b border-amber-900/30 sticky top-0 z-50" role="banner">
       <nav className="container mx-auto px-4 sm:px-6" role="navigation" aria-label="Κύρια πλοήγηση">
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
@@ -22,7 +22,7 @@ export default function Header() {
                   alt="Σιριστατίδης Θεόδωρος Logo"
                   width={48}
                   height={48}
-                  className="object-contain"
+                  className="object-contain rounded-full"
                 />
               </div>
             </div>
@@ -68,7 +68,7 @@ export default function Header() {
           {/* Action Buttons */}
           <div className="hidden md:flex items-center space-x-4">
             <Link href="tel:+306946278589">
-              <Button size="sm" className="bg-amber-600 hover:bg-amber-700 text-white text-xs sm:text-sm">
+              <Button size="sm" className="btn-gold text-xs sm:text-sm">
                 <Phone className="mr-1 h-4 w-4" />
                 Επικοινωνία
               </Button>

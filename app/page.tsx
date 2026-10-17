@@ -31,7 +31,7 @@ export default function Home() {
         Μετάβαση στο κύριο περιεχόμενο
       </a>
 
-      <main id="main-content" className="bg-black text-white">
+      <main id="main-content" className="text-white">
         <div className="container px-4 sm:px-6 mx-auto">
           {/* Hero Section */}
           <section className="relative py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24" aria-labelledby="hero-heading">
@@ -44,7 +44,7 @@ export default function Home() {
                       alt="Siristatidis Theodoros Logo"
                       width={256}
                       height={256}
-                      className="w-full h-full object-contain"
+                      className="w-full h-full object-contain rounded-full"
                     />
                   </div>
                 </div>
@@ -64,7 +64,7 @@ export default function Home() {
 
                 <div className="flex flex-col xs:flex-row gap-3 sm:gap-4 pt-4 sm:pt-6 w-full xs:w-auto">
                   <Link href="/contact" aria-label="Επικοινωνήστε μαζί μας για περισσότερες πληροφορίες">
-                    <Button className="bg-amber-600 hover:bg-amber-700 text-white border-0 text-sm sm:text-base w-full sm:w-auto">
+                    <Button className="btn-gold border-0 text-sm sm:text-base w-full sm:w-auto">
                       <Phone className="mr-2 h-4 w-4" aria-hidden="true" />
                       Επικοινωνήστε μαζί μας
                     </Button>
@@ -91,9 +91,9 @@ export default function Home() {
           </section>
 
           {/* Showcase Carousel Section */}
-          <section className="py-10 sm:py-12 md:py-16 border-t border-amber-900/20">
+          <section className="section-divider py-10 sm:py-12 md:py-16">
             <div className="text-center mb-6 sm:mb-8 md:mb-10">
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-amber-400">Η Τέχνη της Ποντιακής Λύρας</h2>
+              <h2 className="ornament-title text-xl sm:text-2xl md:text-3xl font-bold text-amber-400">Η Τέχνη της Ποντιακής Λύρας</h2>
               <p className="text-sm sm:text-base text-gray-400 mt-2 sm:mt-3 max-w-2xl mx-auto">
                 Ανακαλύψτε τη λεπτομέρεια και την τεχνική πίσω από κάθε χειροποίητο όργανο
               </p>
@@ -107,12 +107,12 @@ export default function Home() {
           {/* Products Section - E-shop με δεδομένα από το spreadsheet */}
           <section
             id="products-section"
-            className="py-10 sm:py-12 md:py-16 border-t border-amber-900/30"
+            className="section-divider py-10 sm:py-12 md:py-16"
             aria-labelledby="products-heading"
             role="region"
           >
             <div className="text-center mb-6 sm:mb-8 md:mb-12">
-              <h2 id="products-heading" className="text-xl sm:text-2xl md:text-3xl font-bold text-amber-400">
+              <h2 id="products-heading" className="ornament-title text-xl sm:text-2xl md:text-3xl font-bold text-amber-400">
                 Τα Προϊόντα μας
               </h2>
               <p className="text-sm sm:text-base text-gray-400 mt-2">
@@ -120,7 +120,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+            <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 auto-rows-fr gap-4 sm:gap-6 lg:gap-8">
               {/* Χειροποίητες Ποντιακές Λύρες - Κύριο προϊόν */}
               <ProductCard
                 id="pontic-lyres-custom"
@@ -381,7 +381,7 @@ export default function Home() {
                 τιμές.
               </p>
               <Link href="/contact">
-                <Button className="bg-amber-600 hover:bg-amber-700 text-white">
+                <Button className="btn-gold">
                   <Phone className="mr-2 h-4 w-4" />
                   Επικοινωνήστε για Παραγγελία
                 </Button>
@@ -390,9 +390,9 @@ export default function Home() {
           </section>
 
           {/* Contact Information Section - Στατικά Στοιχεία */}
-          <section className="py-12 sm:py-16 border-t border-amber-900/30">
+          <section className="section-divider py-12 sm:py-16">
             <div className="text-center mb-10">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-amber-400">Επικοινωνία</h2>
+              <h2 className="ornament-title text-2xl sm:text-3xl md:text-4xl font-bold text-amber-400">Επικοινωνία</h2>
               <p className="text-gray-400 mt-3 max-w-2xl mx-auto">
                 Βρείτε μας και επικοινωνήστε μαζί μας για οποιαδήποτε ερώτηση ή παραγγελία
               </p>
@@ -400,7 +400,7 @@ export default function Home() {
 
             <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
               {/* Phone */}
-              <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-6 border border-gray-800 text-center">
+              <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-6 border border-amber-900/30 text-center card-gold-hover">
                 <div className="w-12 h-12 bg-amber-900/20 rounded-full flex items-center justify-center mb-4 mx-auto">
                   <Phone className="h-6 w-6 text-amber-400" />
                 </div>
@@ -412,7 +412,7 @@ export default function Home() {
               </div>
 
               {/* Email */}
-              <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-6 border border-gray-800 text-center">
+              <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-6 border border-amber-900/30 text-center card-gold-hover">
                 <div className="w-12 h-12 bg-amber-900/20 rounded-full flex items-center justify-center mb-4 mx-auto">
                   <Mail className="h-6 w-6 text-amber-400" />
                 </div>
@@ -427,7 +427,7 @@ export default function Home() {
               </div>
 
               {/* Location */}
-              <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-6 border border-gray-800 text-center">
+              <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-6 border border-amber-900/30 text-center card-gold-hover">
                 <div className="w-12 h-12 bg-amber-900/20 rounded-full flex items-center justify-center mb-4 mx-auto">
                   <MapPin className="h-6 w-6 text-amber-400" />
                 </div>
@@ -446,7 +446,7 @@ export default function Home() {
               </div>
 
               {/* Hours */}
-              <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-6 border border-gray-800 text-center">
+              <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-6 border border-amber-900/30 text-center card-gold-hover">
                 <div className="w-12 h-12 bg-amber-900/20 rounded-full flex items-center justify-center mb-4 mx-auto">
                   <Clock className="h-6 w-6 text-amber-400" />
                 </div>

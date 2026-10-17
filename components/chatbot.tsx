@@ -179,7 +179,7 @@ export default function Chatbot() {
       <div className="fixed bottom-4 right-4 z-40">
         <Button
           onClick={() => setIsOpen(!isOpen)}
-          className="w-14 h-14 rounded-full bg-amber-600 hover:bg-amber-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
+          className="w-14 h-14 rounded-full btn-gold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
           aria-label="Άνοιγμα chatbot"
         >
           {isOpen ? <X className="h-6 w-6" /> : <MessageCircle className="h-6 w-6" />}
@@ -298,7 +298,7 @@ export default function Chatbot() {
                 <Button
                   onClick={handleSendMessage}
                   disabled={!inputValue.trim()}
-                  className="bg-amber-600 hover:bg-amber-700 text-white px-3 flex-shrink-0"
+                  className="btn-gold px-3 flex-shrink-0"
                 >
                   <Send className="h-4 w-4" />
                 </Button>

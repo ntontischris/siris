@@ -848,13 +848,13 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
 
   if (!product) {
     return (
-      <div className="bg-black text-white min-h-screen">
+      <div className="text-white min-h-screen">
         <div className="container mx-auto px-4 sm:px-6 py-12">
           <div className="bg-gray-900 rounded-lg p-8 text-center border border-gray-800">
             <h2 className="text-xl font-semibold text-white mb-2">Το προϊόν δεν βρέθηκε</h2>
             <p className="text-gray-400 mb-6">Το προϊόν που αναζητάτε δεν είναι διαθέσιμο ή δεν υπάρχει.</p>
             <Link href="/">
-              <Button className="bg-amber-600 hover:bg-amber-700 text-white">
+              <Button className="btn-gold">
                 <ArrowLeft className="mr-2 h-4 w-4" />
                 Επιστροφή στην Αρχική
               </Button>
@@ -866,7 +866,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
   }
 
   return (
-    <div className="bg-black text-white">
+    <div className="text-white">
       <div className="container mx-auto px-4 sm:px-6 py-12">
         {/* Breadcrumbs */}
         <div className="mb-6">
@@ -886,7 +886,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Product Images */}
           <div>
-            <div className="bg-gray-900 rounded-lg overflow-hidden border border-gray-800">
+            <div className="bg-gray-900 rounded-lg overflow-hidden border border-amber-900/30">
               <div className="aspect-square relative">
                 <Image
                   src={product.gallery[selectedImage] || "/placeholder.svg"}
@@ -904,8 +904,10 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
                   <button
                     key={index}
                     onClick={() => setSelectedImage(index)}
-                    className={`bg-gray-900 rounded-md overflow-hidden border ${
-                      selectedImage === index ? "border-amber-600" : "border-gray-800"
+                    className={`bg-gray-900 rounded-md overflow-hidden border transition-all duration-300 hover:-translate-y-0.5 hover:border-amber-500/60 hover:shadow-[0_6px_20px_-6px_rgba(212,160,23,0.4)] ${
+                      selectedImage === index
+                        ? "border-amber-500 shadow-[0_0_16px_-4px_rgba(212,160,23,0.5)]"
+                        : "border-amber-900/30"
                     }`}
                   >
                     <div className="aspect-square relative">
@@ -995,7 +997,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <a href="tel:+306946278589" className="flex-1">
-                  <Button className="w-full bg-amber-600 hover:bg-amber-700 text-white">
+                  <Button className="w-full btn-gold">
                     <Phone className="mr-2 h-4 w-4" />
                     Κλήση: +30 694 627 8589
                   </Button>
